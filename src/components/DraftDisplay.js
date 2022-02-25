@@ -7,12 +7,12 @@ import DragMove from '../Components/dragMove';
 import CardView from '../components/CardView';
 
 function draftDisplay() {
-  var num = 0;
+  var imageArray = [];
   var cardArray = [];
   var draftRefs = [];
   var [currentName, setCurrentName] = useState("loading...");
   var [currentDesc, setCurrentDesc] = useState("loading...");
-  var lastCard = 1;
+  var [selectedCard,setSelectedCard] = useState("");
   const [position, setPosition] = useState({x: 0, y: 0})
   const ref = useRef()
   const [hover, setHover] = useState(false);
@@ -27,6 +27,8 @@ function draftDisplay() {
   //when one card is clicked highlight it
   //if a card is already highlighted, swap with next clicked card
   const handleOnClick = (event) => {
+  
+      console.log(event)
     var refNum = event.currentTarget.id;
     //set current card to highlight css and all other to normal css
     for (var i = 0; i < draftRefs.length; i++) {
@@ -34,6 +36,9 @@ function draftDisplay() {
         ? (draftRefs[i].current.className = 'active')
         : (draftRefs[i].current.className = 'grid');
     }
+
+    setSelectedCard(cardArray[refNum]);
+  
   };
 
   //get location of mouse pointer when hovering a card
@@ -66,7 +71,7 @@ function draftDisplay() {
   }, [position])
 
   //display the 5 cards that show in the draft view.
-  const cardDisplay = (numCards) => {
+  const cardDisplay = () => {
     var imageArray = [];
     //creates the array of images 
     for (let i = 0; i < 5; i++) {
@@ -82,11 +87,11 @@ function draftDisplay() {
     //console.log(imageArray)
     return imageArray;
   };
-
+  imageArray = cardDisplay();
   return (
     <div>
       
-      <div className="randomcards" id={"border"} > {cardDisplay(5)} 
+      <div className="randomcards" id={"border"} > {imageArray} 
       <div ref={ref} className=" cardInspectorHidden" >
         <div className="inspectHeader">
                 {currentName}
@@ -96,7 +101,7 @@ function draftDisplay() {
         </div>
       </div>
     </div>
-    <DraftedCardsDisplay />
+    <DraftedCardsDisplay currentCard={selectedCard}/>
     </div>
       
     
