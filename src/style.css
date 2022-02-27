@@ -60,13 +60,12 @@ html {
 
 .draftedcards{
   text-align: center;
-  resize: both;
   display: inline-grid;
   grid-template-columns: 173px 173px 173px 173px 174px;
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  height: fit-content;
+  min-height: 300px;
   width: fit-content;
-  height: 250px;
   padding: 2px;
   border: 5px solid;
   background-color: rgb(70, 71, 170);
@@ -75,21 +74,65 @@ html {
 
 .draftedcardscolumn{
   text-align: center;
+  min-height: 300px;
   resize: both;
   display: inline-grid;
   grid-template-rows: 20px;
   width: 100%;
-  border: 4px solid;
   background-color: rgb(70, 71, 170); 
 }
 
 .preview{
+  float: left;
+  position: absolute;
   text-align: center;
   resize: both;
   width: 100%;
-  Height: 100%;
-  border: 5px solid;
+  Height: fit-content;
+  border: 2px solid;
   background-color: rgb(202, 202, 211); 
+  border-radius: 5px 5px 5px  5px;
+}
+
+.monster-preview{
+  float: left;
+  position: relative;
+  text-align: center;
+  resize: both;
+  width: 100%;
+  Height: fit-content;
+  border: 2px solid;
+  background-color: rgb(167, 101, 101); 
+  border-radius: 5px 5px 5px  5px;
+}
+.spell-preview{
+  position: relative;
+  text-align: center;
+  resize: both;
+  width: 100%;
+  Height: fit-content;
+  border: 2px solid;
+  background-color: rgb(30, 152, 168); 
+  border-radius: 5px 5px 5px  5px;
+}
+.trap-preview{
+  position: relative;
+  text-align: center;
+  resize: both;
+  width: 100%;
+  Height: fit-content;
+  border: 2px solid;
+  background-color: rgb(143, 22, 123); 
+  border-radius: 5px 5px 5px  5px;
+}
+.extra-preview{
+  position: relative;
+  text-align: center;
+  resize: both;
+  width: 100%;
+  Height: fit-content;
+  border: 2px solid;
+  background-color: rgb(83, 83, 100); 
   border-radius: 5px 5px 5px  5px;
 }
 

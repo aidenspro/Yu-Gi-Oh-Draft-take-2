@@ -7,21 +7,58 @@ import DragMove from '../Components/dragMove';
 import CardView from '../components/CardView';
 
 const selectedCards = [];
+const monsters = [];
+const spells = [];
+const traps = [];
+const extra = [];
 var lastCard = [];
 const num = 0;
 
 function previewSetup(preview){
+  console.log(preview[4].split(" "));
+
+  switch(preview[4].split(" ").pop()){
+    case  "Monster":
+      if(preview[4].split(" ")[0] == 'Effect' ||
+      preview[4].split(" ")[0] == 'Normal' ){
+
+        monsters.push(
+          <div className="monster-preview">
+          {preview[2]}
+          </div>
+        )
+      }else
+      extra.push(
+        <div className="extra-preview">
+        {preview[2]}
+        </div>
+      )
+      case "Card":
+        if(preview[4].split(" ")[0] == 'Spell'){
+          spells.push(
+            <div className="spell-preview">
+            {preview[2]}
+            </div>
+          )
+        }else if(preview[4].split(" ")[0] == 'Trap')
+        traps.push(
+          <div className="trap-preview">
+          {preview[2]}
+          </div>
+        )
+    }
+  
   return(
     <div className="preview">
-      {preview}
+      {preview[4]}
     </div>
 
   )
 }
 
 export default function draftedCards(props) {
-  if(lastCard != props.currentCard){
-    selectedCards.push(previewSetup( (props.currentCard[2])))
+  if(lastCard != props.currentCard ){
+    selectedCards.push(previewSetup((props.currentCard)))
     lastCard = props.currentCard
   }
   return (
@@ -45,7 +82,19 @@ export default function draftedCards(props) {
       </div>
     <div className="draftedcards" >
       <div className="draftedcardscolumn" >
-      {selectedCards}
+      {monsters}
+      </div>
+      <div className="draftedcardscolumn" >
+      {spells}
+      </div>
+      <div className="draftedcardscolumn" >
+      {traps}
+      </div>
+      <div className="draftedcardscolumn" >
+      {extra}
+      </div>
+      <div className="draftedcardscolumn" >
+      
       </div>
     </div>
     </div>
