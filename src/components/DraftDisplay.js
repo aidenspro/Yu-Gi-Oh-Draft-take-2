@@ -27,11 +27,9 @@ function draftDisplay() {
   //when one card is clicked highlight it
   //if a card is already highlighted, swap with next clicked card
   const handleOnClick = (event) => {
-  
-      console.log(event)
     var refNum = event.currentTarget.id;
-    //set current card to highlight css and all other to normal css
-    for (var i = 0; i < draftRefs.length; i++) {
+    
+    for (var i = 0; i < draftRefs.length; i++) {//set current card to highlight css and all other to normal css
       refNum == i
         ? (draftRefs[i].current.className = 'active')
         : (draftRefs[i].current.className = 'grid');

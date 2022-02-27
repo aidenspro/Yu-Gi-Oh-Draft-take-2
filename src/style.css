@@ -80,8 +80,17 @@ html {
   grid-template-rows: 20px;
   width: 100%;
   border: 4px solid;
-  background-color: rgb(70, 71, 170);
-  
+  background-color: rgb(70, 71, 170); 
+}
+
+.preview{
+  text-align: center;
+  resize: both;
+  width: 100%;
+  Height: 100%;
+  border: 5px solid;
+  background-color: rgb(202, 202, 211); 
+  border-radius: 5px 5px 5px  5px;
 }
 
 

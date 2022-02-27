@@ -7,12 +7,23 @@ import DragMove from '../Components/dragMove';
 import CardView from '../components/CardView';
 
 const selectedCards = [];
-
+var lastCard = [];
 const num = 0;
 
+function previewSetup(preview){
+  return(
+    <div className="preview">
+      {preview}
+    </div>
+
+  )
+}
+
 export default function draftedCards(props) {
-  selectedCards.push(props.currentCard[2])
-  //console.log(props.currentCard)
+  if(lastCard != props.currentCard){
+    selectedCards.push(previewSetup( (props.currentCard[2])))
+    lastCard = props.currentCard
+  }
   return (
     <div>
     <div className="draftedcardsheader"> 
