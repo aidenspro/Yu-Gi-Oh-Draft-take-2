@@ -15,7 +15,7 @@ var lastCard = [];
 const num = 0;
 
 function previewSetup(preview){
-  console.log(preview[4].split(" "));
+  //console.log(preview[4].split(" "));
 
   switch(preview[4].split(" ").pop()){
     case  "Monster":

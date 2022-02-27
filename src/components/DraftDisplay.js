@@ -34,24 +34,17 @@ function draftDisplay() {
     var refNum = event.currentTarget.id;
     currentID = cardArray[refNum][1];
     setSelectedCard(cardArray[refNum]);
-    
+    //console.log(draftRefs[refNum].current)
+    if(draftRefs[refNum].current.className == 'active'){
+
+    }else{
     for (var i = 0; i < draftRefs.length; i++) {//set current card to highlight css and all other to normal css
       refNum == i
         ? (draftRefs[i].current.className = 'active')
         : (draftRefs[i].current.className = 'grid');
     }
-    
-    
-    console.log(currentID + " " + lastID)
-    if(currentID == lastID){
-      cardArray = [];
-      console.log("here")
-    }
+  }
 
-    
-    lastID = cardArray[refNum][1];
-    
-    
   };
 
   //get location of mouse pointer when hovering a card
@@ -84,11 +77,12 @@ function draftDisplay() {
   }, [position])
 
   //display the 5 cards that show in the draft view.
-  //const cardDisplay = () => {
+  const cardDisplay = () => {
 
     //creates the array of images 
     for (let i = 0; i < 5; i++) {
       cardArray[i] = MakeCardGivenInfo(GetRandomCardInfo());
+      
       imageArray[i] = (
         <div className={"grid"}ref={draftRefs[i]} id={i} onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={handleOnClick}>
           {cardArray[i][0]}
@@ -96,10 +90,11 @@ function draftDisplay() {
       );
         
     }
-
+    
+  }
     //console.log(imageArray)
 
-
+    cardDisplay()
   return (
     <div>
       
