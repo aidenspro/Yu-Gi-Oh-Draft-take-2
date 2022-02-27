@@ -39,5 +39,3 @@ function returnInfo(cardJSON){
 export default function cardInfo() {
 return (returnInfo(getJson()));
 }
-
-export {};

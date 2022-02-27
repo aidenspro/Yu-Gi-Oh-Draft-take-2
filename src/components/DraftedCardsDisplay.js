@@ -57,10 +57,11 @@ function previewSetup(preview){
 }
 
 export default function draftedCards(props) {
-  if(lastCard != props.currentCard ){
+  //console.log(props.currentCard)
+  
     selectedCards.push(previewSetup((props.currentCard)))
     lastCard = props.currentCard
-  }
+  
   return (
     <div>
     <div className="draftedcardsheader"> 

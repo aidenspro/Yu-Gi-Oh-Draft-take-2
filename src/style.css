@@ -18,13 +18,21 @@ html {
 
 .placeholder-plain {
   
-  width: 100%;
-  height: 100%;
+  width: 175px;
+  height: 225px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
 }
+
+.active {
+  width: 175px;
+  height: 225px;
+  cursor: zoom-in;
+  border: 3px solid #fafd12;
+}
+
 
 .randomcards{
   resize: both;
@@ -153,7 +161,7 @@ html {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 20;
+  z-index: 10;
   width:25%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -162,9 +170,9 @@ html {
 .cardInspectorHidden{
   visibility: hidden;
   position: fixed;
-  left: 0px;
-  top: 0px;
-  z-index: 20;
+  left: -1000px;
+  top: -1000px;
+  z-index: -5;
   width:25%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -179,9 +187,3 @@ html {
 }
 
 
-.active {
-  width: 175px;
-  height: 225px;
-  cursor: zoom-in;
-  border: 3px solid #fafd12;
-}
