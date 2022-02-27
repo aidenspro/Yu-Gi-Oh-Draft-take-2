@@ -12,7 +12,9 @@ function draftDisplay() {
   var [currentName, setCurrentName] = useState("loading...");
   var [currentDesc, setCurrentDesc] = useState("loading...");
   var [selectedCard,setSelectedCard] = useState("currentCard");
-  var [test,setTest] = useState(true);
+  var lastID = 0;
+  var currentID = 1;
+
   const [position, setPosition] = useState({x: 0, y: 0})
   const ref = useRef()
   const [hover, setHover] = useState(false);
@@ -29,10 +31,11 @@ function draftDisplay() {
   const handleOnClick = (event) => {
     
     var refNum = event.currentTarget.id;
+    currentID = cardArray[refNum][1];
     setSelectedCard(cardArray[refNum]);
     //console.log(draftRefs[refNum].current)
     if(draftRefs[refNum].current.className == 'active'){
-      setTest(false);
+
     }else{
     for (var i = 0; i < draftRefs.length; i++) {//set current card to highlight css and all other to normal css
       refNum == i
@@ -74,9 +77,9 @@ function draftDisplay() {
 
   //display the 5 cards that show in the draft view.
   const cardDisplay = () => {
+
     //creates the array of images 
     for (let i = 0; i < 5; i++) {
-      
       cardArray[i] = MakeCardGivenInfo(GetRandomCardInfo());
       
       imageArray[i] = (
@@ -84,17 +87,17 @@ function draftDisplay() {
           {cardArray[i][0]}
         </div>
       );
-  }
-  return imageArray
-
+        
+    }
+    
   }
     //console.log(imageArray)
 
-    
+    cardDisplay()
   return (
     <div>
-      
-      <div className="randomcards" id={"border"} > {cardDisplay()} 
+      <RandomCards cardArray={cardArray}/>
+      <div className="randomcards" id={"border"} > {imageArray} 
       <div ref={ref} className=" cardInspectorHidden" >
         <div className="inspectHeader">
                 {currentName}
