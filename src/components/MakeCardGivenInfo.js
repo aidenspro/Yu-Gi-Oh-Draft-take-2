@@ -1,7 +1,7 @@
 import React from 'react';
 import React, { useState, useEffect, useRef, createRef } from 'react';
 import GetRandomCardInfo from '../components/GetRandomCardInfo';
-
+import CardInspector from '../components/CardInspector';
 
 
 export default function makeCard(props) {//---------------------- export function
@@ -10,7 +10,7 @@ export default function makeCard(props) {//---------------------- export functio
   var cardNumber = props.id;
   var futureCards = [];
   futureCards[0] = [48214588,"Rookie fur Hire","test","test"]
-  for(var i = 1;i<6;i++){
+  for(var i = 1;i<21;i++){
     futureCards[i] = GetRandomCardInfo();
   }
 
@@ -74,7 +74,7 @@ const handleOnClick = (caller) => {
   position="relative"
   alt={futureCards[props.nextCard][1]}
 />
-    <div ref={ref} className=" cardInspectorHidden" >
+<div ref={ref} className=" cardInspectorHidden" >
       <div className="inspectHeader">
                 {currentName}
         </div>
@@ -82,6 +82,7 @@ const handleOnClick = (caller) => {
                 {currentDesc}
         </div>
     </div>
+  
   </div>
   )
 }

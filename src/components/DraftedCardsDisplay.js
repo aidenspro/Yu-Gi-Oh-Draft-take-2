@@ -14,72 +14,98 @@ const extra = [];
 var lastCard = [];
 const num = 0;
 
-function previewSetup(preview){
-  //console.log(preview[4].split(" "));
 
-  switch(preview[3].split(" ").pop()){
-    case  "Monster":
-      if(preview[3].split(" ")[0] == 'Effect' ||
-      preview[3].split(" ")[0] == 'Normal' ){
+export default function draftedCards(props) {
 
-        monsters.push(
-          <div className="monster-preview">
-          {preview[1]}
-          </div>
-        )
-      }else
-      extra.push(
-        <div className="extra-preview">
-        {preview[1]}
-        </div>
-      )
-      case "Card":
-        if(preview[3].split(" ")[0] == 'Spell'){
-          spells.push(
-            <div className="spell-preview">
+
+  const hoverEnter = (event) => {
+    
+    ref.current.className=("cardInspector");
+  }
+  //set the card preview to not visible
+  const hoverExit = (event) => {
+    
+    ref.current.className=("cardInspectorHidden");
+  }
+
+  const onHover = (event) => {
+
+    setCurrentName(props.currentCard[1])
+    setCurrentDesc(props.currentCard[2])
+
+    setPosition({
+     x: event.clientX+20,
+     y: event.clientY+20
+    })
+  
+}
+
+  const previewSetup = (preview) =>{
+    //console.log(preview[4].split(" "));
+  
+    switch(preview[3].split(" ").pop()){
+      case  "Monster":
+        if(preview[3].split(" ")[0] == 'Effect' ||
+        preview[3].split(" ")[0] == 'Normal' ){
+  
+          monsters.push(
+            <div className="monster-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
             {preview[1]}
             </div>
           )
-        }else if(preview[3].split(" ")[0] == 'Trap')
-        traps.push(
-          <div className="trap-preview">
+        }else
+        extra.push(
+          <div className="extra-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
           {preview[1]}
           </div>
         )
-    }
+        case "Card":
+          if(preview[3].split(" ")[0] == 'Spell'){
+            spells.push(
+              <div className="spell-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
+              {preview[1]}
+              </div>
+            )
+          }else if(preview[3].split(" ")[0] == 'Trap' )
+          traps.push(
+            <div className="trap-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} >
+            {preview[1]}
+            </div>
+          )
+      }
+    
+    return(
+      <div className="preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
+        {preview[4]}
+      </div>
   
-  return(
-    <div className="preview">
-      {preview[4]}
-    </div>
-
-  )
-}
-
-export default function draftedCards(props) {
-  
+    )
+  }
+  if(lastCard != props.currentCard)
     selectedCards.push(previewSetup((props.currentCard)))
     lastCard = props.currentCard
+
+    const ref = useRef();
+    const [position, setPosition] = useState({x: 0, y: 0})
+    var [currentName, setCurrentName] = useState("loading...");
+    var [currentDesc, setCurrentDesc] = useState("loading...");
+
+    
+  
+  //updating position of the style of the card preveiw div
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.style.transform = `translate(${position.x}px, ${position.y}px)`
+    }
+  }, [position])
+
+
+  
+  
+  
   
   return (
-    <div>
-    <div className="draftedcardsheader"> 
-      <div className="draftedcardsheadercolumn">
-       {"Monsters"}
-      </div>
-      <div className="draftedcardsheadercolumn">
-       {"Spells"}
-      </div>
-      <div className="draftedcardsheadercolumn">
-       {"Traps"}
-      </div>
-      <div className="draftedcardsheadercolumn">
-       {"Extra Deck"}
-      </div>
-      <div className="draftedcardsheadercolumn">
-       {"Side Deck"}
-      </div>
-      </div>
+     
     <div className="draftedcards" >
       <div className="draftedcardscolumn" >
       {monsters}
@@ -94,9 +120,16 @@ export default function draftedCards(props) {
       {extra}
       </div>
       <div className="draftedcardscolumn" >
-      
+      <div ref={ref} className=" cardInspectorHidden" >
+      <div className="inspectHeader">
+                {currentName}
+        </div>
+        <div className="inspectBody">
+                {currentDesc}
+        </div>
+    </div>
       </div>
     </div>
-    </div>
+    
   )
 }
