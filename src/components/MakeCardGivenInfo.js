@@ -42,6 +42,7 @@ return (returnInfo(getJson()));
 }
 var infoArray;
 export default function makeCard(props) {
+  var image;
   var cardNumber = props.id;
   infoArray = returnInfo(getJson());
   var id = infoArray[0];
@@ -51,6 +52,7 @@ export default function makeCard(props) {
   var race = infoArray[4];
   var archetype = infoArray[5];
   const ref = useRef();
+  const imageRef = useRef();
   const [position, setPosition] = useState({x: 0, y: 0})
   var [currentName, setCurrentName] = useState("loading...");
   var [currentDesc, setCurrentDesc] = useState("loading...");
@@ -86,10 +88,12 @@ useEffect(() => {
   }
 }, [position])
 
+const handleOnClick = (infoArray) => {
+  imageRef.current.innerHTML = ""
+  //infoArray = returnInfo(getJson());
+  props.handleOnClick(infoArray);
 
-
-
-  var image = <img
+  image = <img
   className={className}
   id={cardNumber}
   src={
@@ -100,14 +104,30 @@ useEffect(() => {
   draggable="false"
   position="relative"
   alt={infoArray[1]}
+/>
 
+
+}
+
+
+  image = <img
+  className={className}
+  id={cardNumber}
+  src={
+    'https://storage.googleapis.com/ygoprodeck.com/pics/' +
+    infoArray[0] +
+    '.jpg'
+  }
+  draggable="false"
+  position="relative"
+  alt={infoArray[1]}
 />
 
 var imageArray = [image,id,name,desc,type,race,archetype]
 
   return (
-    <div className={"grid"} id={cardNumber} onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={() => props.handleOnClick(imageArray)}>
-    {image};
+    <div ref={imageRef} className={"grid"} id={cardNumber} onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={() => handleOnClick(imageArray)}>
+    {image}
     <div ref={ref} className=" cardInspectorHidden" >
       <div className="inspectHeader">
                 {currentName}

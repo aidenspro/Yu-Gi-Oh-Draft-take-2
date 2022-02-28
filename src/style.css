@@ -39,9 +39,9 @@ html {
   display: inline-grid;
   grid-template-columns: 170px 170px 170px 170px 170px;
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-row-gap: 15px;
   width: fit-content;
-  padding: 10px;
+  padding: 15px;
   border: 5px solid;
   background-color: rgb(39, 41, 128);
   border-radius: 25px 25px 0px  0px;;

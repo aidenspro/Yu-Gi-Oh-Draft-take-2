@@ -11,9 +11,6 @@ export default function App() {
 
 
   return (
-    <div>
       <DraftDisplay />
-     
-    </div>
   );
 }

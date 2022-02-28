@@ -7,38 +7,25 @@ import RandomCards from '../components/RandomCards';
 
 function draftDisplay() {
   var cardArray = [];
+  var [card,setCardArray] = useState();
   var [selectedCard,setSelectedCard] = useState("currentCard");
-
+  var testArray = [48214588,"Rookie fur Hire"];
   const handleOnClick = (infoArray) => {
     
     //setSelectedCard(cardArray[event.target.id])
     //console.log(infoArray)
     if(infoArray.type != "click")
     setSelectedCard(infoArray);
-    console.log(cardArray[0])
-    for (let i = 0; i < 5; i++) {
-      cardArray[i] = 
-      <div onClick={handleOnClick}>
-        <MakeCardGivenInfo id={i} handleOnClick={handleOnClick}/>
-      </div>
-    }
+   
   };
 
   //display the 5 cards that show in the draft view.
     for (let i = 0; i < 5; i++) {
       cardArray[i] = 
-      <div >
         <MakeCardGivenInfo id={i} handleOnClick={handleOnClick}/>
-      </div>
   }
 
-  const clearCards = () => {
-    
 
-
-  };
-
-    
   return (
     <div>
       <div className="randomcards" id={"border"} > {cardArray} 
