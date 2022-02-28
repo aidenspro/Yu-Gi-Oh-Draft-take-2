@@ -1,19 +1,51 @@
 import React from 'react';
 import React, { useState, useEffect, useRef, createRef } from 'react';
-import GetRandomCardInfo from '../components/GetRandomCardInfo';
 
+
+function getJson() {//-----------------------------------getJSOn
+  const [card, setCard] = useState([]);
+
+  useEffect(() => {
+    fetch('https://db.ygoprodeck.com/api/v7/randomcard.php')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        //return obj = data;
+        //console.log(data);
+        setCard(data); // setting obj using setObj
+      })
+      .then(() => {
+        return card;
+      });
+  }, []);
+
+  return card;
+}
+
+
+function returnInfo(cardJSON){//-----------------------------setUp info array
+  var cardInfo = [];
+  
+  cardInfo[0]=cardJSON.id;
+  cardInfo[1]=cardJSON.name;
+  cardInfo[2]=cardJSON.desc;
+  cardInfo[3]=cardJSON.type;
+  cardInfo[4]=cardJSON.race;
+  cardInfo[5]=cardJSON.archetype;
+
+  return cardInfo;
+}
+
+export default function cardInfo() {
+return (returnInfo(getJson()));
+}
 
 var infoArray;
-var count = 0;
 export default function makeCard(props) {//---------------------- export function
-  var [image, setImage] = useState("loading...");
-  
+  var image;
   var cardNumber = props.id;
-  var futureCards = [];
-  for(var i = 0;i<5;i++){
-    futureCards[i] = GetRandomCardInfo();
-  }
-  infoArray = GetRandomCardInfo();
+  infoArray = returnInfo(getJson());
   var id = infoArray[0];
   var name = infoArray[1];
   var desc = infoArray[2];
@@ -58,27 +90,13 @@ useEffect(() => {
 }, [position])
 
 const handleOnClick = (imageRef, infoArray) => {
-  //imageRef.current.innerHTML = ""
-
+  imageRef.current.innerHTML = ""
+  //infoArray = returnInfo(getJson());
   props.handleOnClick(imageRef,infoArray);
-  console.log(infoArray)
-  infoArray = futureCards[count]
-  console.log(futureCards[count])
-  console.log(imageRef.current.src)
-  imageRef.current.src = 'https://storage.googleapis.com/ygoprodeck.com/pics/' +
-  infoArray[0] + '.jpg';
-  console.log(imageRef.current.src)
-  count++;
-}
 
-
-  
-
-var imageArray = [image,id,name,desc,type,race,archetype]
-//-----------------------------------return
-  return (
-  <div>
-  <img ref={imageRef} className={className} id={cardNumber} onMouseMove={onHover}  onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={() => handleOnClick(imageRef,infoArray)}
+  image = <img
+  className={className}
+  id={cardNumber}
   src={
     'https://storage.googleapis.com/ygoprodeck.com/pics/' +
     infoArray[0] +
@@ -88,6 +106,27 @@ var imageArray = [image,id,name,desc,type,race,archetype]
   position="relative"
   alt={infoArray[1]}
 />
+}
+
+
+  image = <img
+  className={className}
+  id={cardNumber}
+  src={
+    'https://storage.googleapis.com/ygoprodeck.com/pics/' +
+    infoArray[0] +
+    '.jpg'
+  }
+  draggable="false"
+  position="relative"
+  alt={infoArray[1]}
+/>
+
+var imageArray = [image,id,name,desc,type,race,archetype]
+//-----------------------------------return
+  return (
+    <div ref={imageRef} className={"grid"} id={cardNumber} onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={() => handleOnClick(imageRef,infoArray)}>
+    {image}
     <div ref={ref} className=" cardInspectorHidden" >
       <div className="inspectHeader">
                 {currentName}
