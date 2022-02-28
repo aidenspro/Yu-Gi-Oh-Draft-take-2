@@ -24,6 +24,23 @@ html {
   background-size: contain;
   background-position: center;
   background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
+  opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+.placeholder-plain-nofade {
+  
+  width: 175px;
+  height: 225px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
+  opacity: 1;
+
 }
 
 .active {
@@ -184,6 +201,15 @@ html {
 }
 .inspectBody{
   background-color: aqua;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
 
 

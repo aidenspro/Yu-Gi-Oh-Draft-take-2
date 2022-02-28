@@ -17,33 +17,33 @@ const num = 0;
 function previewSetup(preview){
   //console.log(preview[4].split(" "));
 
-  switch(preview[4].split(" ").pop()){
+  switch(preview[3].split(" ").pop()){
     case  "Monster":
-      if(preview[4].split(" ")[0] == 'Effect' ||
-      preview[4].split(" ")[0] == 'Normal' ){
+      if(preview[3].split(" ")[0] == 'Effect' ||
+      preview[3].split(" ")[0] == 'Normal' ){
 
         monsters.push(
           <div className="monster-preview">
-          {preview[2]}
+          {preview[1]}
           </div>
         )
       }else
       extra.push(
         <div className="extra-preview">
-        {preview[2]}
+        {preview[1]}
         </div>
       )
       case "Card":
-        if(preview[4].split(" ")[0] == 'Spell'){
+        if(preview[3].split(" ")[0] == 'Spell'){
           spells.push(
             <div className="spell-preview">
-            {preview[2]}
+            {preview[1]}
             </div>
           )
-        }else if(preview[4].split(" ")[0] == 'Trap')
+        }else if(preview[3].split(" ")[0] == 'Trap')
         traps.push(
           <div className="trap-preview">
-          {preview[2]}
+          {preview[1]}
           </div>
         )
     }
@@ -57,7 +57,6 @@ function previewSetup(preview){
 }
 
 export default function draftedCards(props) {
-  //console.log(props.currentCard)
   
     selectedCards.push(previewSetup((props.currentCard)))
     lastCard = props.currentCard
