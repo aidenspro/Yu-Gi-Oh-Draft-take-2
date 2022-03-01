@@ -15,7 +15,6 @@ html {
 }
 
 .placeholder-plain {
-  
   width: 181px;
   height: 231px;
   background-repeat: no-repeat;
@@ -30,15 +29,12 @@ html {
 }
 
 .placeholder-plain-nofade {
-  
   width: 181px;
   height: 231px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
- 
-
 }
 
 .active {
@@ -57,7 +53,6 @@ html {
     padding: 15px;
     border: 5px solid;
     background-color: rgb(39, 41, 128);
-    
  }
 
  .bigpreview{
@@ -85,7 +80,7 @@ html {
   font-size: large;
   text-align: center;
   display: inline-grid;
-  grid-template-columns: 20% 20% 20% 20% 20% ;
+  grid-template-columns: 20% 19% 18% 19% 20% ;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
   width: auto;
@@ -119,10 +114,11 @@ html {
   float: left;
   position: absolute;
   text-align: center;
+  
   width: 100%;
   Height: fit-content;
   background-color: rgb(202, 202, 211); 
-  border-radius: 5px 5px 5px  5px;
+  border-radius: 7px 7px 7px  7px;;
 }
 
 .monster-preview{
@@ -133,17 +129,18 @@ html {
   width: 100%;
   Height: fit-content;
   background-color: rgb(167, 101, 101); 
-  border-radius: 5px 5px 5px  5px;
+  border-radius: 7px 7px 7px  7px;
 }
 .spell-preview{
   position: relative;
   text-align: center;
-
+  border-top: 4px solid;
+  border-bottom: 1px solid;
   width: 100%;
   Height: fit-content;
   
   background-color: rgb(30, 152, 168); 
-  border-radius: 5px 5px 5px  5px;
+  border-radius: 7px 7px 7px  7px;
 }
 .trap-preview{
   position: relative;
@@ -153,8 +150,9 @@ html {
   Height: fit-content;
   
   background-color: rgb(143, 22, 123); 
-  border-radius: 5px 5px 5px  5px;
+  border-radius: 7px 7px 7px  7px;
 }
+
 .extra-preview{
   position: relative;
   text-align: center;
@@ -163,7 +161,7 @@ html {
   Height: fit-content;
   
   background-color: rgb(83, 83, 100); 
-  border-radius: 5px 5px 5px  5px;
+  border-radius: 7px 7px 7px  7px;
 }
 
 
@@ -190,10 +188,14 @@ html {
 }
 
 .inspectHeader{
+  white-space: pre-wrap;
   background-color: rgb(186, 204, 204);
+  border-radius: 7px 7px 0px  0px;
 }
 .inspectBody{
+  white-space: pre-wrap;
   background-color: aqua;
+  border-radius: 0px 0px 7px  7px;
 }
 
 @keyframes fadeInOpacity {

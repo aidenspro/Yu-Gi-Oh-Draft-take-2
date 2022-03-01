@@ -49,7 +49,7 @@ function draftDisplay() {
        {"Extra Deck"}
       </div>
       <div className="draftedcardsheadercolumn">
-       {"Side Deck"}
+       {"All Cards"}
       </div>
       </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>

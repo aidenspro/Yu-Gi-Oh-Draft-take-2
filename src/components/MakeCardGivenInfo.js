@@ -9,7 +9,7 @@ export default function makeCard(props) {//---------------------- export functio
   
   var cardNumber = props.id;
   var futureCards = [];
-  futureCards[0] = [48214588,"Rookie fur Hire","test","test"]
+  futureCards[0] = [55144522,"Click Here","To Start Draft","test"]
   for(var i = 1;i<21;i++){
     futureCards[i] = GetRandomCardInfo();
   }

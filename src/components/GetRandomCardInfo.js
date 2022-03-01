@@ -32,6 +32,10 @@ function returnInfo(cardJSON){
   cardInfo[3]=cardJSON.type;
   cardInfo[4]=cardJSON.race;
   cardInfo[5]=cardJSON.archetype;
+  cardInfo[6]=cardJSON.atk;
+  cardInfo[7]=cardJSON.def;
+  cardInfo[9]=cardJSON.level;
+  cardInfo[10]=cardJSON.attribute
 
   return cardInfo;
 }

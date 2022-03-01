@@ -11,6 +11,7 @@ const monsters = [];
 const spells = [];
 const traps = [];
 const extra = [];
+const allCards = [];
 var lastCard = [];
 const num = 0;
 
@@ -30,6 +31,10 @@ export default function draftedCards(props) {
 
   const onHover = (event) => {
 
+    if(props.currentCard[3].split(" ").pop() == "Monster"){
+    setAttack(props.currentCard[6])
+    setDefense(props.currentCard[7])
+    }
     setCurrentName(props.currentCard[1])
     setCurrentDesc(props.currentCard[2])
 
@@ -46,19 +51,21 @@ export default function draftedCards(props) {
     switch(preview[3].split(" ").pop()){
       case  "Monster":
         if(preview[3].split(" ")[0] == 'Effect' ||
-        preview[3].split(" ")[0] == 'Normal' ){
+        preview[3].split(" ")[0] == 'Normal' ||  preview[3].split(" ")[0] == 'Flip'){
   
           monsters.push(
             <div className="monster-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
             {preview[1]}
             </div>
           )
-        }else
+          allCards.push(monsters[monsters.length-1])
+        }else{
         extra.push(
           <div className="extra-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
           {preview[1]}
           </div>
         )
+        allCards.push(extra[extra.length-1])}
         case "Card":
           if(preview[3].split(" ")[0] == 'Spell'){
             spells.push(
@@ -66,17 +73,19 @@ export default function draftedCards(props) {
               {preview[1]}
               </div>
             )
-          }else if(preview[3].split(" ")[0] == 'Trap' )
+            allCards.push(spells[spells.length-1])
+          }else if(preview[3].split(" ")[0] == 'Trap' ){
           traps.push(
             <div className="trap-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} >
             {preview[1]}
-            </div>
+            </div> 
           )
+          allCards.push(traps[traps.length-1])}
       }
     
     return(
       <div className="preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
-        {preview[4]}
+        {preview[1]}
       </div>
   
     )
@@ -89,6 +98,8 @@ export default function draftedCards(props) {
     const [position, setPosition] = useState({x: 0, y: 0})
     var [currentName, setCurrentName] = useState("loading...");
     var [currentDesc, setCurrentDesc] = useState("loading...");
+    var [attack, setAttack] = useState("0");
+    var [defense, setDefense] = useState("0");
 
     
   
@@ -120,11 +131,18 @@ export default function draftedCards(props) {
       {extra}
       </div>
       <div className="draftedcardscolumn" >
+      {allCards}
+      </div>
+      <div className="draftedcardscolumn" >
       <div ref={ref} className=" cardInspectorHidden" >
       <div className="inspectHeader">
-                {currentName}
+                
+            {currentName}{'\n'}
+            ATK/DEF : {attack}/{defense}
+                      
         </div>
         <div className="inspectBody">
+                
                 {currentDesc}
         </div>
     </div>
