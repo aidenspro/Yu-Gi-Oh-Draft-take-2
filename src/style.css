@@ -206,7 +206,26 @@ html {
   width: 945px;
   height: 231px;
   text-align: center;
+  background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
   
+  background-position: center;
+  background-repeat: no-repeat;
+  
+}
+.test-hidden{
+  position:absolute;
+  background-color: rgb(186, 204, 204);
+  z-index: 20;
+  width: 945px;
+  height: 231px;
+  text-align: center;
+  background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
+
+  background-position: center;
+  background-repeat: no-repeat;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s 3s, opacity 4s linear;
 }
 
 @keyframes fadeInOpacity {
@@ -215,6 +234,14 @@ html {
 	}
 	100% {
 		opacity: 1;
+	}
+}
+@keyframes fadeOutOpacity {
+	100% {
+		opacity: 1;
+	}
+	0% {
+		opacity: 0;
 	}
 }
 @keyframes expand {

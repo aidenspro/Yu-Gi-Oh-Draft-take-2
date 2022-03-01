@@ -10,12 +10,13 @@ function draftDisplay() {
   var cardArray = [];
   var [nextCard,setNextCard] = useState(0);
   var [selectedCard,setSelectedCard] = useState("currentCard");
-  var testArray = [48214588,"Rookie fur Hire"];
+  var testArray = [55144522,"Click Here","To Start Draft","test"];
+  var ref = useRef();
 
   const handleOnClick = (infoArray) => {
     //console.log(cardArray.length)
     //console.log(infoArray)
-    
+    ref.current.className = "test-hidden"
     if(infoArray.type != "click"){
     setSelectedCard(infoArray);
     num++;
@@ -29,7 +30,7 @@ function draftDisplay() {
     <div>
     <div className="holder"> 
       <div className="randomcards" id={"border"} > 
-      <div className="test">Click Here to Start Draft </div>
+      <div className="test" ref={ref} onClick={() => handleOnClick(testArray)}> <h1> Click Here to Start Draft </h1> </div>
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={2} nextCard={nextCard}handleOnClick={handleOnClick}/>
