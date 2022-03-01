@@ -29,7 +29,7 @@ function draftDisplay() {
     <div>
     <div className="holder"> 
       <div className="randomcards" id={"border"} > 
-      <div className="test" />
+      <div className="test">Click Here to Start Draft </div>
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={2} nextCard={nextCard}handleOnClick={handleOnClick}/>

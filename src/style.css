@@ -53,6 +53,8 @@ html {
     padding: 15px;
     border: 5px solid;
     background-color: rgb(39, 41, 128);
+    height:30%;
+    visibility: visible;
  }
 
  .bigpreview{
@@ -198,14 +200,24 @@ html {
   border-radius: 0px 0px 7px  7px;
 }
 .test{
-  position:fixed;
+  position:absolute;
   background-color: rgb(186, 204, 204);
   z-index: 20;
-  width: 181px;
+  width: 945px;
   height: 231px;
+  text-align: center;
+  
 }
 
 @keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes expand {
 	0% {
 		opacity: 0;
 	}
