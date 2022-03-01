@@ -48,36 +48,35 @@ export default function draftedCards(props) {
     switch(preview[3].split(" ").pop()){
       case  "Monster":
         if(preview[3].split(" ")[0] == 'Effect' ||
-        preview[3].split(" ")[0] == 'Normal' ||  preview[3].split(" ")[0] == 'Flip'){
+        preview[3].split(" ")[0] == 'Normal' ||  preview[3].split(" ")[0] == 'Flip' ||  preview[3].split(" ")[0] == 'Tuner' ){
   
           monsters.push(
             <div className="monster-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
             {preview[1]}
             </div>
           )
-          allCards.push(monsters[monsters.length-1])
+          
         }else{
         extra.push(
           <div className="extra-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
           {preview[1]}
           </div>
-        )
-        allCards.push(extra[extra.length-1])}
+        )}
+        
         case "Card":
-          if(preview[3].split(" ")[0] == 'Spell'){
+          if(preview[3].split(" ")[0] == 'Spell')
             spells.push(
               <div className="spell-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
               {preview[1]}
               </div>
             )
-            allCards.push(spells[spells.length-1])
-          }else if(preview[3].split(" ")[0] == 'Trap' ){
+          else if(preview[3].split(" ")[0] == 'Trap' )
           traps.push(
             <div className="trap-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit} >
             {preview[1]}
             </div> 
           )
-          allCards.push(traps[traps.length-1])}
+          
       }
     
     return(
