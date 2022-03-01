@@ -27,8 +27,9 @@ function draftDisplay() {
 
 
   return (
-    <div>
-    <div className="holder"> 
+    <div className="container" >
+      
+     
       <div className="randomcards" id={"border"} > 
       <div className="test" ref={ref} onClick={() => handleOnClick(testArray)}> <h1> Click Here to Start Draft </h1> </div>
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
@@ -37,25 +38,26 @@ function draftDisplay() {
       <MakeCardGivenInfo key={3} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick}/>
       </div>
-      <div className="draftedcardsheader"> 
-      <div className="draftedcardsheadercolumn">
+     
+      <div className="draftheaders"> 
+      <h3 className="draftheaderscolumn">
        {"Monsters"}
-      </div>
-      <div className="draftedcardsheadercolumn">
+      </h3>
+      <h3 className="draftheaderscolumn">
        {"Spells"}
-      </div>
-      <div className="draftedcardsheadercolumn">
+      </h3>
+      <h3 className="draftheaderscolumn">
        {"Traps"}
-      </div>
-      <div className="draftedcardsheadercolumn">
+      </h3>
+      <h3 className="draftheaderscolumn">
        {"Extra Deck"}
-      </div>
-      <div className="draftedcardsheadercolumn">
+      </h3>
+      <h3 className="draftheaderscolumn">
        {"All Cards"}
-      </div>
+      </h3>
       </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>
-    </div>
+    
     
 
   </div>

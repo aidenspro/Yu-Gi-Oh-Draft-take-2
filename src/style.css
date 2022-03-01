@@ -44,70 +44,50 @@ html {
   border: 3px solid #fafd12;
 }
 
-.holder{
-    margin-left:20%;
-    margin-top:10%;
-    display: inline-grid;
-    grid-row-gap: 15px;
-    width: fit-content;
-    padding: 15px;
-    border: 5px solid;
-    background-color: rgb(39, 41, 128);
-    height:30%;
-    visibility: visible;
- }
-
- .bigpreview{
-  margin-left:0%;
-  margin-top:10%;
-  background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
-  width:100%;
-  height: 100%;
- }
-
 
 
 .randomcards{
-  resize: both;
-  display: inline-grid;
-  grid-template-columns: auto auto auto auto auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 15px;
-  width: inherit;
-  background-color: rgb(39, 41, 128);
+
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: randomcards; 
+  
  
 }
 
-.draftedcardsheader{
-  font-size: large;
-  text-align: center;
-  display: inline-grid;
-  grid-template-columns: 20% 19% 18% 19% 20% ;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  width: auto;
-  height: 20px;
-  
+.draftheaders{
+  display: grid; 
+  font-size: larger;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: draftheaders; 
+  border: 3px solid;
   background-color: rgb(70, 71, 170);
 }
 
 .draftedcards{
   text-align: center;
-  display: inline-grid;
-  grid-template-columns: 20% 20% 20% 20% 20% ;
-  
-  height: fit-content;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: draftedcards; 
   min-height: 300px;
-
   background-color: rgb(70, 71, 170);
-  
 }
 
-.draftedcardscolumn{
+.draftheaderscolumn{
   text-align: center;
-  min-height: 300px;
-  width: inherit;
-
+  
   background-color: rgb(70, 71, 170);
 
 }
@@ -194,11 +174,13 @@ html {
 }
 
 .inspectHeader{
+  text-align: center;
   white-space: pre-wrap;
   background-color: rgb(186, 204, 204);
   border-radius: 7px 7px 0px  0px;
 }
 .inspectBody{
+  text-align: center;
   white-space: pre-wrap;
   background-color: aqua;
   border-radius: 0px 0px 7px  7px;
@@ -207,8 +189,7 @@ html {
   position:absolute;
   background-color: rgb(186, 204, 204);
   z-index: 20;
-  width: 945px;
-  height: 231px;
+  
   text-align: center;
   background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
   
@@ -220,8 +201,7 @@ html {
   position:absolute;
   background-color: rgb(186, 204, 204);
   z-index: 20;
-  width: 945px;
-  height: 231px;
+
   text-align: center;
   background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
 
@@ -257,4 +237,24 @@ html {
 	}
 }
 
+.container {  display: grid;
+  grid-template-columns: 0.7fr 1.7fr 0.6fr;
+  grid-template-rows: 1fr 0.2fr 2.5fr 0.3fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". randomcards ."
+    ". draftheaders ."
+    ". draftedcards ."
+    ". footer ."
+    ". . .";
+}
+
+.test { grid-area: randomcards; }
+
+
+
+.footer { grid-area: footer; }
+
+.draftedcards { grid-area: draftedcards; }
 
