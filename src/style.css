@@ -148,6 +148,7 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: visibility 1s 2s, opacity 1s linear;
 }
 .cardInspectorHidden{
   visibility: hidden;
@@ -157,6 +158,7 @@ html {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transition: visibility 1s 2s, opacity 1s linear;
 }
 
 .inspectHeader{
