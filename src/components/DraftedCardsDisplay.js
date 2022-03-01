@@ -1,10 +1,6 @@
 import React from 'react';
 import React, { useState, useEffect, useRef, createRef } from 'react';
-import GetRandomCardInfo from '../components/GetRandomCardInfo';
-import MakeCardGivenInfo from '../components/MakeCardGivenInfo';
-import CardInspector from '../components/CardInspector';
-import DragMove from '../Components/dragMove';
-import CardView from '../components/CardView';
+
 
 const selectedCards = [];
 const monsters = [];
@@ -31,13 +27,13 @@ export default function draftedCards(props) {
 
   const onHover = (event) => {
 
-    if(props.currentCard[3].split(" ").pop() == "Monster"){
-    setAttack(props.currentCard[6])
-    setDefense(props.currentCard[7])
-    }
+
+    setAttack(props.currentCard[11])
+    setCurrentRace(props.currentCard[4])
     setCurrentName(props.currentCard[1])
     setCurrentDesc(props.currentCard[2])
-
+    setCurrentType(props.currentCard[3])
+    setCurrentAttribute(props.currentCard[10])
     setPosition({
      x: event.clientX+20,
      y: event.clientY+20
@@ -47,6 +43,7 @@ export default function draftedCards(props) {
 
   const previewSetup = (preview) =>{
     //console.log(preview[4].split(" "));
+    
   
     switch(preview[3].split(" ").pop()){
       case  "Monster":
@@ -94,14 +91,17 @@ export default function draftedCards(props) {
     selectedCards.push(previewSetup((props.currentCard)))
     lastCard = props.currentCard
 
+
     const ref = useRef();
+    const type = props.currentCard[3].split(" ").pop();
     const [position, setPosition] = useState({x: 0, y: 0})
     var [currentName, setCurrentName] = useState("loading...");
     var [currentDesc, setCurrentDesc] = useState("loading...");
+    var [currentRace, setCurrentRace] = useState("loading...");
+    var [currentAttribute, setCurrentAttribute] = useState("loading...");
+    var [currentType, setCurrentType] = useState("loading...");
     var [attack, setAttack] = useState("0");
-    var [defense, setDefense] = useState("0");
 
-    
   
   //updating position of the style of the card preveiw div
   useEffect(() => {
@@ -111,8 +111,6 @@ export default function draftedCards(props) {
   }, [position])
 
 
-  
-  
   
   
   return (
@@ -138,7 +136,10 @@ export default function draftedCards(props) {
       <div className="inspectHeader">
                 
             {currentName}{'\n'}
-            ATK/DEF : {attack}/{defense}
+            <text >
+            {attack}
+            {'\n'} {currentRace}
+            </text>
                       
         </div>
         <div className="inspectBody">

@@ -20,12 +20,20 @@ export default function makeCard(props) {//---------------------- export functio
   
   const [position, setPosition] = useState({x: 0, y: 0})
   var [currentName, setCurrentName] = useState("loading...");
-  var [currentDesc, setCurrentDesc] = useState("loading...");
+    var [currentDesc, setCurrentDesc] = useState("loading...");
+    var [currentRace, setCurrentRace] = useState("loading...");
+    var [currentAttribute, setCurrentAttribute] = useState("loading...");
+    var [currentType, setCurrentType] = useState("loading...");
+    var [attack, setAttack] = useState("0");
   const onHover = (event) => {
    
+
+    setAttack(futureCards[props.nextCard][11])
+    setCurrentRace(futureCards[props.nextCard][4])
     setCurrentName(futureCards[props.nextCard][1])
     setCurrentDesc(futureCards[props.nextCard][2])
-
+    setCurrentType(futureCards[props.nextCard][3])
+    setCurrentAttribute(futureCards[props.nextCard][10])
     setPosition({
      x: event.clientX+20,
      y: event.clientY+20
@@ -76,7 +84,11 @@ const handleOnClick = (caller) => {
 />
 <div ref={ref} className=" cardInspectorHidden" >
       <div className="inspectHeader">
-                {currentName}
+                {currentName}{'\n'}
+            <text >
+            {attack}
+            {'\n'} {currentRace}
+            </text>
         </div>
         <div className="inspectBody">
                 {currentDesc}

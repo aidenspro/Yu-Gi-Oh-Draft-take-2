@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef, createRef } from 'react';
-import GetRandomCardInfo from '../components/GetRandomCardInfo';
-import MakeCardGivenInfo from '../components/MakeCardGivenInfo';
+
 
 var cardArray = [];
 var card = 0;
