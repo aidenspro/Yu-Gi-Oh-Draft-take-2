@@ -9,7 +9,7 @@ export default function SaveList (props)  {
 
   return (
     <>
-      <a download='list.txt' href={downloadLink}>download</a>
+      <a download='list.ydk' href={downloadLink}>download</a>
     </>
   );
 }

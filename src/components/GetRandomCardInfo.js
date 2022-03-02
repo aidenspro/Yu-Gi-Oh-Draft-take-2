@@ -37,9 +37,16 @@ function returnInfo(cardJSON){
   cardInfo[9]=cardJSON.level;
   cardInfo[10]=cardJSON.attribute
 
-  cardInfo[6] >= 0 ? 
-  cardInfo[11]= "ATK/DEF : " + cardInfo[6] + "/" + cardInfo[7] : " "
+  if(cardInfo[6] >= 0 ) {
+  cardInfo[11]= "ATK/DEF : " + cardInfo[6] + "/" + cardInfo[7];
+  }else{
+    cardInfo[11]=" "
+  }
   
+
+  
+
+
   return cardInfo;
 }
 

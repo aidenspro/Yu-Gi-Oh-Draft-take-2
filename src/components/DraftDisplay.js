@@ -8,6 +8,7 @@ import RandomCards from '../components/RandomCards';
 var num = 0;
 var cardArray = [];
 var extraArray = [];
+extraArray[0] = '#extra'
 var sideDeck = [];
 cardArray[0] = "#Created By ...\n#main"
 
@@ -19,8 +20,12 @@ function draftDisplay() {
   var ref = useRef();
 
   const handleOnClick = (infoArray) => {
-    //console.log(cardArray.length)
-    //console.log(infoArray)
+
+      if(infoArray[3].split(" ")[0] != 'Effect' ||
+        infoArray[3].split(" ")[0] != 'Normal' ||  infoArray[3].split(" ")[0] != 'Flip' ||  infoArray[3].split(" ")[0] !='Tuner' ){
+          extraArray.push(infoArray[0]);   
+      }
+
     ref.current.className = "test-hidden"
     if(infoArray.type != "click"){
     setSelectedCard(infoArray);
@@ -28,17 +33,20 @@ function draftDisplay() {
     cardArray[num] = infoArray[0]}
     console.log(cardArray)
     num++;
+    if(num == 31){
+      ref.current.className = "test"
+      extraArray.push("!side");
+    }
     setNextCard(num);
     }
   };
 
 
-
   return (
     <div className="container" >
       <div >
-        Copy Deck to clipboard
-        <CreateDeckList deckList={cardArray}/>
+        Download Deck
+        <CreateDeckList deckList={cardArray.concat(extraArray)}/>
       </div>
      
       <div className="randomcards" id={"border"} > 
