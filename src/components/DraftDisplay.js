@@ -28,7 +28,11 @@ function draftDisplay() {
   };
 
   const createDeckList = () => {
-    var deckString = ""
+    var deckString = "#main"
+
+    //for(var i = 1; i < num; i++)
+
+
   }
 
   return (
