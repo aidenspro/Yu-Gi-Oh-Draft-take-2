@@ -3,10 +3,14 @@ import React, { useState, useEffect, useRef, createRef } from 'react';
 import GetRandomCardInfo from '../components/GetRandomCardInfo';
 import MakeCardGivenInfo from '../components/MakeCardGivenInfo';
 import DraftedCardsDisplay from '../components/DraftedCardsDisplay';
-
+import CreateDeckList from '../components/CreateDeckList'
 import RandomCards from '../components/RandomCards';
 var num = 0;
 var cardArray = [];
+var extraArray = [];
+var sideDeck = [];
+cardArray[0] = "#Created By ...\n#main"
+
 function draftDisplay() {
   
   var [nextCard,setNextCard] = useState(0);
@@ -20,26 +24,22 @@ function draftDisplay() {
     ref.current.className = "test-hidden"
     if(infoArray.type != "click"){
     setSelectedCard(infoArray);
-    cardArray[num] = infoArray[0]
+    if(num >= 1){
+    cardArray[num] = infoArray[0]}
     console.log(cardArray)
     num++;
     setNextCard(num);
     }
   };
 
-  const createDeckList = () => {
-    var deckString = "#main"
 
-    //for(var i = 1; i < num; i++)
-
-
-  }
 
   return (
     <div className="container" >
-      <button >
+      <div >
         Copy Deck to clipboard
-      </button>
+        <CreateDeckList deckList={cardArray}/>
+      </div>
      
       <div className="randomcards" id={"border"} > 
       <div className="test" ref={ref} onClick={() => handleOnClick(testArray)}> <h1> Click Here to Start Draft </h1> </div>

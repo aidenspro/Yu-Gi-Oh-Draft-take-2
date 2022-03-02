@@ -7,13 +7,15 @@ const monsters = [];
 const spells = [];
 const traps = [];
 const extra = [];
+const extraNoPic = [];
 const allCards = [];
+const allCardsNoPic = [];
 var lastCard = [];
 const num = 0;
 
 
 export default function draftedCards(props) {
-
+  allCardsNoPic.push(props.currentCard)
 
   const hoverEnter = (event) => {
     
@@ -60,8 +62,9 @@ export default function draftedCards(props) {
         extra.push(
           <div className="extra-preview" onMouseMove={onHover} onMouseEnter={hoverEnter} onMouseOut={hoverExit}>
           {preview[1]}
-          </div>
-        )}
+          </div>)
+        extraNoPic.push(preview);
+      }
         
         case "Card":
           if(preview[3].split(" ")[0] == 'Spell')
