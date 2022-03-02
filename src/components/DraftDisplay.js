@@ -6,8 +6,9 @@ import DraftedCardsDisplay from '../components/DraftedCardsDisplay';
 
 import RandomCards from '../components/RandomCards';
 var num = 0;
+var cardArray = [];
 function draftDisplay() {
-  var cardArray = [];
+  
   var [nextCard,setNextCard] = useState(0);
   var [selectedCard,setSelectedCard] = useState("currentCard");
   var testArray = [55144522,"Click Here","To Start Draft","test"];
@@ -19,16 +20,22 @@ function draftDisplay() {
     ref.current.className = "test-hidden"
     if(infoArray.type != "click"){
     setSelectedCard(infoArray);
+    cardArray[num] = infoArray[0]
+    console.log(cardArray)
     num++;
     setNextCard(num);
     }
   };
 
-
+  const createDeckList = () => {
+    var deckString = ""
+  }
 
   return (
     <div className="container" >
-      
+      <button >
+        Copy Deck to clipboard
+      </button>
      
       <div className="randomcards" id={"border"} > 
       <div className="test" ref={ref} onClick={() => handleOnClick(testArray)}> <h1> Click Here to Start Draft </h1> </div>
