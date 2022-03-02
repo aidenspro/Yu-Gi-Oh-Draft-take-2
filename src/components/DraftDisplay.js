@@ -33,7 +33,7 @@ function draftDisplay() {
     cardArray[num] = infoArray[0]}
     console.log(cardArray)
     num++;
-    if(num == 31){
+    if(num == 30){
       ref.current.className = "test"
       extraArray.push("!side");
     }

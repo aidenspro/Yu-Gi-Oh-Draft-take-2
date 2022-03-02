@@ -15,8 +15,8 @@ html {
 }
 
 .placeholder-plain {
-  width: 181px;
-  height: 231px;
+  max-height: 100%;
+  max-width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -29,8 +29,7 @@ html {
 }
 
 .placeholder-plain-nofade {
-  width: 181px;
-  height: 231px;
+
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -38,8 +37,7 @@ html {
 }
 
 .active {
-  width: 175px;
-  height: 225px;
+
   cursor: zoom-in;
   border: 3px solid #fafd12;
 }
@@ -47,6 +45,7 @@ html {
 
 
 .randomcards{
+  
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
   grid-template-rows: 1fr; 
@@ -174,14 +173,17 @@ html {
   border-radius: 0px 0px 7px  7px;
 }
 .test{
-  position:absolute;
+  position: absolute;
+ 
+  height: 25%;
+  margin-right: 0%;
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
   background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  
+  grid-area: randomcards;
 }
 .test-hidden{
   position:absolute;
@@ -227,6 +229,7 @@ html {
   grid-template-columns: 0.7fr 1.7fr 0.6fr;
   grid-template-rows: 1fr 0.2fr 2.5fr 0.3fr 1fr;
   gap: 0px 0px;
+  
   grid-auto-flow: row;
   grid-template-areas:
     ". randomcards ."
@@ -235,9 +238,6 @@ html {
     ". footer ."
     ". . .";
 }
-
-.test { grid-area: randomcards; }
-
 
 
 .footer { grid-area: footer; }
