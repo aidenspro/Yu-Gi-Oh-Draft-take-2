@@ -60,7 +60,7 @@ html {
 .draftheaders{
   display: grid; 
   font-size: larger;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1.4fr 0.2fr 1.4fr 1fr; 
   grid-template-rows: 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
@@ -74,11 +74,11 @@ html {
 .draftedcards{
   text-align: center;
   display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
   grid-template-rows: 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
-    ". . . . ."; 
+    ". . . ."; 
   grid-area: draftedcards; 
   border: 3px solid;
   background-color: rgb(70, 71, 170);
@@ -237,16 +237,26 @@ html {
     ". . .";
 }
 
-.allCards { grid-area: allCards; 
-overflow-y: scroll;
+.allCards { 
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     ". . ."
     ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
+    ". . ."
     ". . ."; 
+  grid-area: allCards; 
+}
+
+.counter{
+  text-align: center;
+  
 }
 
 .footer { grid-area: footer; 

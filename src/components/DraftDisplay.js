@@ -18,7 +18,7 @@ function draftDisplay() {
   
   var [nextCard,setNextCard] = useState(0);
   var [selectedCard,setSelectedCard] = useState("currentCard");
-  var testArray = [55144522,"Click Here","To Start Draft","test"];
+  var testArray = ["55144522","Click Here","To Start Draft","test"];
   var ref = useRef();
   var downloadRef = useRef();
 
@@ -30,7 +30,7 @@ function draftDisplay() {
       }
 
     ref.current.className = "test-hidden"
-    if(infoArray.type != "click"){
+    if(infoArray.type != "click" ){
     setSelectedCard(infoArray);
     if(num >= 1){
     cardArray[num] = infoArray[0]}
@@ -66,15 +66,16 @@ function draftDisplay() {
       <h3 className="draftheaderscolumn">
        {"Spells"}
       </h3>
+      <h3 className="counter , draftheaderscolumn" > 
+      Total{"\n"}
+      {num == 1 || num==0 ? "0": num-1} </h3>
       <h3 className="draftheaderscolumn">
        {"Traps"}
       </h3>
       <h3 className="draftheaderscolumn">
        {"Extra Deck"}
       </h3>
-      <h3 className="draftheaderscolumn">
-       {"All Cards"}
-      </h3>
+
       </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>
     <div className={'footer'} ref={downloadRef}>
