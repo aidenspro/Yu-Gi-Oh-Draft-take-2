@@ -39,8 +39,9 @@ html {
 .active {
   max-height: 100%;
   max-width: 100%;
+  z-index: 3;
   cursor: zoom-in;
-  border: 3px solid #a6a793;
+  border: 3px solid #f8ff6c;
 }
 
 
@@ -51,7 +52,7 @@ html {
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
   grid-template-rows: 1fr; 
-  gap: 0px 0px; 
+  gap: 0px 3px; 
   grid-template-areas: 
     ". . . . ."; 
   grid-area: randomcards; 
@@ -200,6 +201,18 @@ html {
   transition: visibility 2s linear, opacity 2s linear;
   grid-area: randomcards;
 }
+.test-over{
+  
+  background-color: rgb(186, 204, 204);
+  z-index: 20;
+  text-align: center;
+  background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  grid-area: randomcards;
+  
+}
+
 
 @keyframes fadeInOpacity {
 	0% {
@@ -226,18 +239,16 @@ html {
 	}
 }
 
-.container {  display: grid;
+.container {  display: grid; 
   grid-template-columns: 0.3fr 2.1fr 0.6fr; 
-  grid-template-rows: 1fr 0.3fr 2.4fr 0.3fr 1fr; 
-  gap: 0px 0px;
-  grid-row-gap: 5px;
-  grid-auto-flow: row;
-  grid-template-areas:
+  grid-template-rows: 0.9fr 0.2fr 2.6fr 0.3fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
     ". randomcards allCards"
     ". draftheaders allCards"
     ". draftedcards allCards"
     ". footer ."
-    ". . .";
+    ". . ."; 
 }
 
 .allCards { 

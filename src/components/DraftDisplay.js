@@ -13,7 +13,7 @@ var extraArray = [];
 extraArray[0] = '#extra'
 var sideDeck = [];
 cardArray[0] = "#Created By ...\n#main"
-
+var draftOver = false;
 function draftDisplay() {
   
   var [nextCard,setNextCard] = useState(0);
@@ -23,6 +23,7 @@ function draftDisplay() {
   var downloadRef = useRef();
 
   const handleOnClick = (infoArray) => {
+    if(!draftOver){
 
       if(infoArray[3].split(" ")[0] != 'Effect' ||
         infoArray[3].split(" ")[0] != 'Normal' ||  infoArray[3].split(" ")[0] != 'Flip' ||  infoArray[3].split(" ")[0] !='Tuner' ){
@@ -37,12 +38,15 @@ function draftDisplay() {
     console.log(cardArray)
     num++;
     if(num == 33){
+      draftOver = true;
       ref.current.className = "test"
       extraArray.push("!side");
       downloadRef.current.style = "visibility: visible"
+
     }
     setNextCard(num);
     }
+  }
   };
 
 
