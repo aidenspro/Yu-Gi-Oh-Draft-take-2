@@ -80,7 +80,7 @@ html {
   grid-template-areas: 
     ". . . . ."; 
   grid-area: draftedcards; 
-  min-height: 300px;
+  min-height: 200px;
   background-color: rgb(70, 71, 170);
 }
 
