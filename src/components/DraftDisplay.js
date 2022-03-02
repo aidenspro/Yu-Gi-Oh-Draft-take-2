@@ -18,6 +18,7 @@ function draftDisplay() {
   var [selectedCard,setSelectedCard] = useState("currentCard");
   var testArray = [55144522,"Click Here","To Start Draft","test"];
   var ref = useRef();
+  var downloadRef = useRef();
 
   const handleOnClick = (infoArray) => {
 
@@ -33,9 +34,10 @@ function draftDisplay() {
     cardArray[num] = infoArray[0]}
     console.log(cardArray)
     num++;
-    if(num == 30){
+    if(num == 33){
       ref.current.className = "test"
       extraArray.push("!side");
+      downloadRef.current.style = "visibility: visible"
     }
     setNextCard(num);
     }
@@ -48,7 +50,8 @@ function draftDisplay() {
       <div className="randomcards" > 
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick}/>
-      <MakeCardGivenInfo key={2} nextCard={nextCard}handleOnClick={handleOnClick}/>
+      <MakeCardGivenInfo key={2} nextCard={nextCard}
+      handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={3} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick}/>
       </div>
@@ -71,8 +74,9 @@ function draftDisplay() {
       </h3>
       </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>
-    <div >
+    <div className={'footer'} ref={downloadRef}>
         Download Deck
+        - 
         <CreateDeckList deckList={cardArray.concat(extraArray)}/>
       </div>
     

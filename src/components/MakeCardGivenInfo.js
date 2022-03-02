@@ -10,7 +10,7 @@ export default function makeCard(props) {//---------------------- export functio
   var cardNumber = props.id;
   var futureCards = [];
   futureCards[0] = [55144522,"Click Here","To Start Draft","test"]
-  for(var i = 1;i<31;i++){
+  for(var i = 1;i<33;i++){
     futureCards[i] = GetRandomCardInfo();
   }
   const imageRef = useRef();
@@ -46,7 +46,7 @@ export default function makeCard(props) {//---------------------- export functio
 }
 //set the card preview to not visible
 const hoverExit = (event) => {
-  event.currentTarget.className = "placeholder-plain-nofade"
+  event.currentTarget.className = "placeholder-plain"
   ref.current.className=("cardInspectorHidden");
 }
 
@@ -63,6 +63,7 @@ const handleOnClick = (caller) => {
   props.handleOnClick(futureCards[props.nextCard]);
   imageRef.current.className="placeholder-plain"
   setCurrentCount(count + 1);
+  
 }
 
 

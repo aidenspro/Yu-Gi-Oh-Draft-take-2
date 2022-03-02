@@ -25,17 +25,23 @@ function getJson() {
 
 function returnInfo(cardJSON){
   var cardInfo = [];
-  
+  var typeSplit = " "
+  var typeSet = "test"
+
   cardInfo[0]=cardJSON.id;
   cardInfo[1]=cardJSON.name;
   cardInfo[2]=cardJSON.desc;
   cardInfo[3]=cardJSON.type;
-  cardInfo[4]=cardJSON.race;
+  typeSet = cardJSON.type;
+  typeSplit = typeSet.split(" ");
+  cardInfo[4]=cardJSON.race + typeSplit[0];
+  
   cardInfo[5]=cardJSON.archetype;
   cardInfo[6]=cardJSON.atk;
   cardInfo[7]=cardJSON.def;
   cardInfo[9]=cardJSON.level;
   cardInfo[10]=cardJSON.attribute
+  
 
   if(cardInfo[6] >= 0 ) {
   cardInfo[11]= "ATK/DEF : " + cardInfo[6] + "/" + cardInfo[7];
