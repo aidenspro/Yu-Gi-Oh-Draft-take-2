@@ -44,13 +44,8 @@ function draftDisplay() {
 
   return (
     <div className="container" >
-      <div >
-        Download Deck
-        <CreateDeckList deckList={cardArray.concat(extraArray)}/>
-      </div>
-     
-      <div className="randomcards" id={"border"} > 
       <div className="test" ref={ref} onClick={() => handleOnClick(testArray)}> <h1> Click Here to Start Draft </h1> </div>
+      <div className="randomcards" > 
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={2} nextCard={nextCard}handleOnClick={handleOnClick}/>
@@ -76,7 +71,10 @@ function draftDisplay() {
       </h3>
       </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>
-    
+    <div >
+        Download Deck
+        <CreateDeckList deckList={cardArray.concat(extraArray)}/>
+      </div>
     
 
   </div>

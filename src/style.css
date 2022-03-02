@@ -26,6 +26,7 @@ html {
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 2s;
+  
 }
 
 .placeholder-plain-nofade {
@@ -35,13 +36,14 @@ html {
   background-size: contain;
   background-position: center;
   background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
+  visibility: visible;
 }
 
 .active {
   max-height: 100%;
   max-width: 100%;
   cursor: zoom-in;
-  border: 3px solid #fafd12;
+  border: 3px solid #a6a793;
 }
 
 
@@ -80,7 +82,7 @@ html {
   grid-template-areas: 
     ". . . . ."; 
   grid-area: draftedcards; 
-  min-height: 200px;
+ 
   background-color: rgb(70, 71, 170);
 }
 
@@ -175,10 +177,7 @@ html {
   border-radius: 0px 0px 7px  7px;
 }
 .test{
-  position: absolute;
- 
-  height: 25%;
-  margin-right: 0%;
+  
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
@@ -186,20 +185,19 @@ html {
   background-position: center;
   background-repeat: no-repeat;
   grid-area: randomcards;
+  
 }
 .test-hidden{
-  position:absolute;
   background-color: rgb(186, 204, 204);
   z-index: 20;
-
   text-align: center;
   background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
-
   background-position: center;
   background-repeat: no-repeat;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 1s 3s, opacity 4s linear;
+  transition: visibility 2s 3s, opacity 2s linear;
+  grid-area: randomcards;
 }
 
 @keyframes fadeInOpacity {
