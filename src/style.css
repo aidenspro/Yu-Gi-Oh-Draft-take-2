@@ -70,7 +70,8 @@ html {
     ". . . . ."; 
   grid-area: draftheaders; 
   border: 3px solid;
-  background-color: rgb(70, 71, 170);
+  background-color: rgb(165, 165, 216);
+
 }
 
 .draftedcards{
@@ -82,7 +83,7 @@ html {
   grid-template-areas: 
     ". . . . ."; 
   grid-area: draftedcards; 
- 
+  border: 3px solid;
   background-color: rgb(70, 71, 170);
 }
 
@@ -229,7 +230,7 @@ html {
   grid-template-columns: 0.7fr 1.7fr 0.6fr;
   grid-template-rows: 1fr 0.2fr 2.5fr 0.3fr 1fr;
   gap: 0px 0px;
-  
+  grid-row-gap: 5px;
   grid-auto-flow: row;
   grid-template-areas:
     ". randomcards ."
