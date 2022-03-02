@@ -230,13 +230,24 @@ html {
   grid-row-gap: 5px;
   grid-auto-flow: row;
   grid-template-areas:
-    ". randomcards ."
-    ". draftheaders ."
-    ". draftedcards ."
+    ". randomcards allCards"
+    ". draftheaders allCards"
+    ". draftedcards allCards"
     ". footer ."
     ". . .";
 }
 
+.allCards { grid-area: allCards; 
+overflow-y: scroll;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". . ."; 
+}
 
 .footer { grid-area: footer; 
 visibility: hidden;

@@ -10,7 +10,7 @@ export default function makeCard(props) {//---------------------- export functio
   var cardNumber = props.id;
   var futureCards = [];
   futureCards[0] = [55144522,"Click Here","To Start Draft","test"]
-  for(var i = 1;i<33;i++){
+  for(var i = 1;i<34;i++){
     futureCards[i] = GetRandomCardInfo();
   }
   const imageRef = useRef();
@@ -27,10 +27,11 @@ export default function makeCard(props) {//---------------------- export functio
    
 
     setAttack(futureCards[props.nextCard][11])
-    setCurrentRace(futureCards[props.nextCard][4])
+    
     setCurrentName(futureCards[props.nextCard][1])
     setCurrentDesc(futureCards[props.nextCard][2])
     setCurrentType(futureCards[props.nextCard][3])
+    setCurrentRace(futureCards[props.nextCard][4] +"/" + currentType.split(" ")[0])
     setCurrentAttribute(futureCards[props.nextCard][10])
     setPosition({
      x: event.clientX+20,

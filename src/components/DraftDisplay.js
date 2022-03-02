@@ -5,6 +5,8 @@ import MakeCardGivenInfo from '../components/MakeCardGivenInfo';
 import DraftedCardsDisplay from '../components/DraftedCardsDisplay';
 import CreateDeckList from '../components/CreateDeckList'
 import RandomCards from '../components/RandomCards';
+import AllCardsPreview from '../components/AllCardsPreview';
+
 var num = 0;
 var cardArray = [];
 var extraArray = [];
@@ -45,6 +47,7 @@ function draftDisplay() {
 
 
   return (
+
     <div className="container" >
       <div className="test" ref={ref} onClick={() => handleOnClick(testArray)}> <h1> Click Here to Start Draft </h1> </div>
       <div className="randomcards" > 
@@ -77,9 +80,11 @@ function draftDisplay() {
     <div className={'footer'} ref={downloadRef}>
         Download Deck
         - 
-        <CreateDeckList deckList={cardArray.concat(extraArray)}/>
+    <CreateDeckList deckList={cardArray.concat(extraArray)}/>
       </div>
-    
+      <div className="allCards">
+      <AllCardsPreview cards={selectedCard}/>
+      </div>
 
   </div>
     
