@@ -46,7 +46,8 @@ html {
 
 
 .randomcards{
-  
+  max-height: 100%;
+  max-width: 100%;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
   grid-template-rows: 1fr; 
@@ -72,6 +73,8 @@ html {
 }
 
 .draftedcards{
+  max-height: 100%;
+  max-width: 100%;
   text-align: center;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr; 
@@ -224,8 +227,8 @@ html {
 }
 
 .container {  display: grid;
-  grid-template-columns: 0.7fr 1.7fr 0.6fr;
-  grid-template-rows: 1fr 0.2fr 2.5fr 0.3fr 1fr;
+  grid-template-columns: 0.3fr 2.1fr 0.6fr; 
+  grid-template-rows: 1fr 0.3fr 2.4fr 0.3fr 1fr; 
   gap: 0px 0px;
   grid-row-gap: 5px;
   grid-auto-flow: row;
@@ -238,11 +241,15 @@ html {
 }
 
 .allCards { 
+  max-height: 100%;
+  max-width: 100%;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
+    ". . ."
+    ". . ."
     ". . ."
     ". . ."
     ". . ."
