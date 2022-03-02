@@ -29,7 +29,8 @@ html {
 }
 
 .placeholder-plain-nofade {
-
+  max-height: 100%;
+  max-width: 100%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -37,7 +38,8 @@ html {
 }
 
 .active {
-
+  max-height: 100%;
+  max-width: 100%;
   cursor: zoom-in;
   border: 3px solid #fafd12;
 }
