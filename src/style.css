@@ -16,8 +16,8 @@ html {
 }
 
 .placeholder-plain {
-  max-height: 100%;
-  max-width: 100%;
+  height: 256px;
+  width: 206px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -25,8 +25,8 @@ html {
 
 }
 .placeholder-plain-start {
-  max-height: 100%;
-  max-width: 100%;
+  height: 250px;
+  width: 200px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -36,8 +36,8 @@ html {
 
 
 .active {
-  max-height: 100%;
-  max-width: 100%;
+  height: 250px;
+  width: 200px;
   z-index: 3;
   cursor: zoom-in;
   border: 3px solid #f8ff6c;
@@ -132,17 +132,20 @@ html {
   border-radius: 0px 0px 7px  7px;
 }
 .test{
-  
+  margin-left:10%;
+  margin-right:20%;
+  height: 100%;
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
   background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  grid-area: randomcards;
   
 }
 .test-hidden{
+  margin-left:10%;
+  margin-right:20%;
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
@@ -224,20 +227,11 @@ visibility: hidden;
 }
 
 
-.container {   display: grid; 
-  grid-template-columns: 0.5fr 1.8fr 1.2fr; 
-  grid-template-rows: 0.4fr 1.6fr 2.4fr 0.3fr 0.3fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "nav nav nav"
-    "sidenav randomcards allcards"
-    "sidenav draftedcards allcards"
-    "sidenav footer ."
-    "sidenav . ."; 
-}
 
 
 .randomcards-hidden{
+  margin-left:10%;
+  margin-right:20%;
   max-height: 100%;
   max-width: 100%;
   display: grid; 
@@ -251,6 +245,8 @@ visibility: hidden;
   opacity: 0;
 }
 .randomcards{
+  margin-left:10%;
+  margin-right:20%;
   max-height: 100%;
   max-width: 100%;
   display: grid; 
@@ -260,22 +256,34 @@ visibility: hidden;
   grid-template-areas: 
     ". . . . ."; 
   grid-area: randomcards; 
+  overflow-x: scroll;
   visibility: visible;
   opacity: 1;
 	transition:visibility 0s 1.5s,opacity 1s linear;
 }
 
 .draftheaders{
+  margin-left:10%;
+  margin-right:20%;
   text-align: center;
-  
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: draftheaders;
   border: 3px solid;
   background-color: rgb(165, 165, 216);
 
 }
 
 .draftedcards{
-  max-height: 100%;
+  margin-left:10%;
+  margin-right:20%;
+  max-height: 600px;
   max-width: 100%;
+  min-height: 400px;
   text-align: center;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr; 
