@@ -132,9 +132,11 @@ html {
   border-radius: 0px 0px 7px  7px;
 }
 .test{
+  position: absolute;
   margin-left:10%;
   margin-right:10%;
-
+  width: 78.5%;
+  height: 25%;
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
@@ -144,6 +146,7 @@ html {
   
 }
 .test-hidden{
+  position: absolute;
   margin-left:10%;
   margin-right:20%;
   background-color: rgb(186, 204, 204);
