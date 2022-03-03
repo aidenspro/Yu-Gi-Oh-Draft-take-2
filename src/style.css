@@ -15,6 +15,18 @@ html {
   overflow-y: hidden;
 }
 
+.zoom {
+  transition: transform .2s; /* Animation */
+
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  transform: scale(3.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform-origin: 50%;
+ 
+}
+
 .placeholder-plain {
   height: 256px;
   width: 206px;

@@ -63,7 +63,12 @@ function draftDisplay() {
   return (
 
     <div className="container" >
-      <div className="test" ref={ref} onClick={() => handleOnClickBanner()}> <h1> Click Here to Start Draft </h1> </div> 
+      <div className="test" ref={ref} onClick={() => handleOnClickBanner()}> <h1> Click Here to Start Draft </h1> 
+      <div className={'footer'} ref={downloadRef}>
+        Download Deck
+        - 
+    <CreateDeckList deckList={cardArray.concat(extraArray)}/>
+      </div></div> 
       <div className="randomcards-hidden" ref={randomRef} >
       
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
@@ -97,11 +102,7 @@ function draftDisplay() {
       
  
    <DraftedCardsDisplay currentCard={selectedCard}/>
-    <div className={'footer'} ref={downloadRef}>
-        Download Deck
-        - 
-    <CreateDeckList deckList={cardArray.concat(extraArray)}/>
-      </div>
+    
       
 
   </div>

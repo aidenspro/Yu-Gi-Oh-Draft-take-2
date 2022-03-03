@@ -6,7 +6,7 @@ export default function AllCardsPreview(props) {
 var tempArray = props.cards[0];
 console.log(props.cards[0])
   if(tempArray != 55144522 && tempArray>0)
-    images.push( <img className={".placeholder-plain-preview"} 
+    images.push( <img className={"placeholder-plain-preview" + " " + "zoom"} 
     src={
       'https://storage.googleapis.com/ygoprodeck.com/pics/' +
       props.cards[0] +
