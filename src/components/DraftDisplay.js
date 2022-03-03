@@ -74,21 +74,21 @@ function draftDisplay() {
       </div>
      
       <div className="draftheaders"> 
-      <h3 className="draftheaderscolumn">
+      <h4 className="">
        {"Monsters"}
-      </h3>
-      <h3 className="draftheaderscolumn">
+      </h4>
+      <h4 className="">
        {"Spells"}
-      </h3>
-      <h3 className="counter , draftheaderscolumn" > 
+      </h4>
+      <h4 className="counter" > 
       Total{"\n"}
-      {num == 1 || num==0 ? "0": num-1} </h3>
-      <h3 className="draftheaderscolumn">
+      {num == 1 || num==0 ? "0": num-1} </h4>
+      <h4 className="">
        {"Traps"}
-      </h3>
-      <h3 className="draftheaderscolumn">
+      </h4>
+      <h4 className="">
        {"Extra Deck"}
-      </h3>
+      </h4>
 
       </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>

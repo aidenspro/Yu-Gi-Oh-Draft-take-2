@@ -12,6 +12,7 @@ html {
   background-size: cover;
   background-color: rgb(39, 37, 37);
   margin: 0%;
+  overflow-y: hidden;
 }
 
 .placeholder-plain {
@@ -99,10 +100,6 @@ html {
   grid-area: draftedcards; 
   border: 3px solid;
   background-color: rgb(70, 71, 170);
-}
-
-.draftheaderscolumn{
-  text-align: center;
 }
 
 .preview{
@@ -252,9 +249,9 @@ html {
 	}
 }
 
-.container {  display: grid; 
+.container {   display: grid; 
   grid-template-columns: 0.3fr 2.1fr 0.6fr; 
-  grid-template-rows: 0.9fr 0.2fr 2.6fr 0.3fr 1fr; 
+  grid-template-rows: 1fr 0.1fr 2.6fr 0.3fr 1fr; 
   gap: 0px 0px; 
   grid-template-areas: 
     ". randomcards allCards"
@@ -265,8 +262,6 @@ html {
 }
 
 .allCards { 
-  max-height: 100%;
-  max-width: 100%;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr; 
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
