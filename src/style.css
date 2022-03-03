@@ -45,63 +45,6 @@ html {
 
 
 
-.randomcards-hidden{
-  max-height: 100%;
-  max-width: 100%;
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 3px; 
-  grid-template-areas: 
-    ". . . . ."; 
-  grid-area: randomcards; 
-  visibility: hidden;
-  opacity: 0;
-}
-.randomcards{
-  max-height: 100%;
-  max-width: 100%;
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 3px; 
-  grid-template-areas: 
-    ". . . . ."; 
-  grid-area: randomcards; 
-  visibility: visible;
-  opacity: 1;
-	transition:visibility 0s 1.5s,opacity 1s linear;
-}
-
-.draftheaders{
-  display: grid; 
-  font-size: larger;
-  grid-template-columns: 1fr 1.4fr 0.2fr 1.4fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . . . ."; 
-  grid-area: draftheaders; 
-  border: 3px solid;
-  background-color: rgb(165, 165, 216);
-
-}
-
-.draftedcards{
-  max-height: 100%;
-  max-width: 100%;
-  text-align: center;
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . . ."; 
-  grid-area: draftedcards; 
-  border: 3px solid;
-  background-color: rgb(70, 71, 170);
-}
-
 .preview{
   float: left;
   position: absolute;
@@ -249,36 +192,7 @@ html {
 	}
 }
 
-.container {   display: grid; 
-  grid-template-columns: 0.3fr 2.1fr 0.6fr; 
-  grid-template-rows: 1fr 0.1fr 2.6fr 0.3fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". randomcards allCards"
-    ". draftheaders allCards"
-    ". draftedcards allCards"
-    ". footer ."
-    ". . ."; 
-}
 
-.allCards { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."; 
-  grid-area: allCards; 
-}
 
 .counter{
   text-align: center;
@@ -291,3 +205,87 @@ visibility: hidden;
 
 .draftedcards { grid-area: draftedcards; }
 
+/* #-------------Grid Stuff---------------------- */
+.allCards { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . ."; 
+  grid-area: allcards; 
+}
+
+
+.container {   display: grid; 
+  grid-template-columns: 0.5fr 1.8fr 1.2fr; 
+  grid-template-rows: 0.4fr 1.6fr 2.4fr 0.3fr 0.3fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "nav nav nav"
+    "sidenav randomcards allcards"
+    "sidenav draftedcards allcards"
+    "sidenav footer ."
+    "sidenav . ."; 
+}
+
+
+.randomcards-hidden{
+  max-height: 100%;
+  max-width: 100%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: randomcards; 
+  visibility: hidden;
+  opacity: 0;
+}
+.randomcards{
+  max-height: 100%;
+  max-width: 100%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: randomcards; 
+  visibility: visible;
+  opacity: 1;
+	transition:visibility 0s 1.5s,opacity 1s linear;
+}
+
+.draftheaders{
+  text-align: center;
+  
+  border: 3px solid;
+  background-color: rgb(165, 165, 216);
+
+}
+
+.draftedcards{
+  max-height: 100%;
+  max-width: 100%;
+  text-align: center;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 0.2fr 1.8fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "draftheaders"
+    ". . . ."; 
+  grid-area: draftedcards; 
+  border: 3px solid;
+  background-color: rgb(70, 71, 170);
+}
+/* #-------------Grid Stuff---------------------- */

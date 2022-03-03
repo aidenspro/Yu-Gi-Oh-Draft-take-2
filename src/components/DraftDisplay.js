@@ -73,24 +73,9 @@ function draftDisplay() {
       <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick}/>
       </div>
      
-      <div className="draftheaders"> 
-      <h4 className="">
-       {"Monsters"}
-      </h4>
-      <h4 className="">
-       {"Spells"}
-      </h4>
-      <h4 className="counter" > 
-      Total{"\n"}
-      {num == 1 || num==0 ? "0": num-1} </h4>
-      <h4 className="">
-       {"Traps"}
-      </h4>
-      <h4 className="">
-       {"Extra Deck"}
-      </h4>
 
-      </div>
+      
+ 
    <DraftedCardsDisplay currentCard={selectedCard}/>
     <div className={'footer'} ref={downloadRef}>
         Download Deck
