@@ -59,7 +59,6 @@ useEffect(() => {
 }, [position])
 
 const handleOnClick = (caller) => {
-  console.log(props.nextCard)
   
   props.handleOnClick(futureCards[props.nextCard]);
   imageRef.current.className="placeholder-plain"

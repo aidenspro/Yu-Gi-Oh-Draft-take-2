@@ -30,9 +30,7 @@ html {
   background-size: contain;
   background-position: center;
   background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
-  visibility: hidden;
-  opacity: 0;
-	transition:visibility 0.3s linear,opacity 0.3s linear;
+
 }
 
 
@@ -46,6 +44,19 @@ html {
 
 
 
+.randomcards-hidden{
+  max-height: 100%;
+  max-width: 100%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 3px; 
+  grid-template-areas: 
+    ". . . . ."; 
+  grid-area: randomcards; 
+  visibility: hidden;
+  opacity: 0;
+}
 .randomcards{
   max-height: 100%;
   max-width: 100%;
@@ -56,7 +67,9 @@ html {
   grid-template-areas: 
     ". . . . ."; 
   grid-area: randomcards; 
- 
+  visibility: visible;
+  opacity: 1;
+	transition:visibility 0s 1.5s,opacity 1s linear;
 }
 
 .draftheaders{
