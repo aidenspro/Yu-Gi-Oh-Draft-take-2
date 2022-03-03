@@ -31,7 +31,7 @@ export default function draftedCards(props) {
 
 
     setAttack(props.currentCard[11])
-    setCurrentRace(props.currentCard[4])
+    setCurrentRace(props.currentCard[4] + "/" + props.currentCard[3].split(" ")[0])
     setCurrentName(props.currentCard[1])
     setCurrentDesc(props.currentCard[2])
     setCurrentType(props.currentCard[3])
