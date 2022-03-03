@@ -133,8 +133,8 @@ html {
 }
 .test{
   margin-left:10%;
-  margin-right:20%;
-  height: 100%;
+  margin-right:10%;
+
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
@@ -210,28 +210,21 @@ visibility: hidden;
 
 /* #-------------Grid Stuff---------------------- */
 .allCards { 
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."
-    ". . . ."; 
-  grid-area: allcards; 
+  position: fixed;
+  margin-left: 80%;
+  margin-top: 0%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
 }
-
-
+.container{
+  
+}
 
 
 .randomcards-hidden{
   margin-left:10%;
-  margin-right:20%;
+  margin-right:10%;
   max-height: 100%;
   max-width: 100%;
   display: grid; 
@@ -246,7 +239,7 @@ visibility: hidden;
 }
 .randomcards{
   margin-left:10%;
-  margin-right:20%;
+  margin-right:10%;
   max-height: 100%;
   max-width: 100%;
   display: grid; 
@@ -264,7 +257,7 @@ visibility: hidden;
 
 .draftheaders{
   margin-left:10%;
-  margin-right:20%;
+  margin-right:10%;
   text-align: center;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
@@ -280,8 +273,8 @@ visibility: hidden;
 
 .draftedcards{
   margin-left:10%;
-  margin-right:20%;
-  max-height: 600px;
+  margin-right:10%;
+  max-height: 300px;
   max-width: 100%;
   min-height: 400px;
   text-align: center;
@@ -293,7 +286,7 @@ visibility: hidden;
     "draftheaders"
     ". . . ."; 
   grid-area: draftedcards; 
-  border: 3px solid;
-  background-color: rgb(70, 71, 170);
+  
+  
 }
 /* #-------------Grid Stuff---------------------- */

@@ -63,15 +63,20 @@ function draftDisplay() {
   return (
 
     <div className="container" >
-      <div className="test" ref={ref} onClick={() => handleOnClickBanner()}> <h1> Click Here to Start Draft </h1> </div>
-      <div className="randomcards-hidden" ref={randomRef} > 
+      <div className="test" ref={ref} onClick={() => handleOnClickBanner()}> <h1> Click Here to Start Draft </h1> </div> 
+      <div className="randomcards-hidden" ref={randomRef} >
+      
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={2} nextCard={nextCard}
       handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={3} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick}/>
+      <div className="allCards">
+      <AllCardsPreview cards={selectedCard}/>
       </div>
+      </div>
+      
       <div className="draftheaders">
       <h4 className="">
        {"Monsters"}
@@ -97,9 +102,7 @@ function draftDisplay() {
         - 
     <CreateDeckList deckList={cardArray.concat(extraArray)}/>
       </div>
-      <div className="allCards">
-      <AllCardsPreview cards={selectedCard}/>
-      </div>
+      
 
   </div>
     
