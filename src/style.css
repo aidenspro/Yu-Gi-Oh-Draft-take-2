@@ -136,7 +136,7 @@ html {
   margin-left:10%;
   margin-right:10%;
   width: 78.5%;
-  height: 25%;
+  height: 27%;
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
@@ -148,7 +148,9 @@ html {
 .test-hidden{
   position: absolute;
   margin-left:10%;
-  margin-right:20%;
+  margin-right:10%;
+  width: 78.5%;
+  height: 27%;
   background-color: rgb(186, 204, 204);
   z-index: 20;
   text-align: center;
