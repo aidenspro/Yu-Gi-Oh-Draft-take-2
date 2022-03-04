@@ -9,6 +9,7 @@ export default function makeCard(props) {//---------------------- export functio
   
   var cardNumber = props.id;
   var futureCards = [];
+  //loading all future cards at the start of the draft
   futureCards[0] = [55144522,"Click Here","To Start Draft","test"]
   for(var i = 1;i<34;i++){
     futureCards[i] = GetRandomCardInfo();
@@ -23,11 +24,10 @@ export default function makeCard(props) {//---------------------- export functio
     var [currentAttribute, setCurrentAttribute] = useState("loading...");
     var [currentType, setCurrentType] = useState("loading...");
     var [attack, setAttack] = useState("0");
-  const onHover = (event) => {
-   
 
+    //when hovering a card, set the info of the card preview to that cards info
+  const onHover = (event) => {
     setAttack(futureCards[props.nextCard][11])
-    
     setCurrentName(futureCards[props.nextCard][1])
     setCurrentDesc(futureCards[props.nextCard][2])
     setCurrentType(futureCards[props.nextCard][3])
@@ -58,15 +58,13 @@ useEffect(() => {
   }
 }, [position])
 
+//incrementing the card that is displayed
 const handleOnClick = (caller) => {
-  
   props.handleOnClick(futureCards[props.nextCard]);
   imageRef.current.className="placeholder-plain"
   setCurrentCount(count + 1);
   
 }
-
-
 
 //-----------------------------------return
   return (

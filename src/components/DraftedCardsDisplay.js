@@ -27,8 +27,9 @@ export default function draftedCards(props) {
     ref.current.className=("cardInspectorHidden");
   }
 
+  //when hovering a card, set the info of the card preview to that cards info
   const onHover = (event) => {
-
+  
 
     setAttack(props.currentCard[11])
     setCurrentRace(props.currentCard[4] + "/" + props.currentCard[3].split(" ")[0])
@@ -43,6 +44,7 @@ export default function draftedCards(props) {
   
 }
 
+// organizes the data that is shown in the card preview below the cardDisplay
   const previewSetup = (preview) =>{
     //console.log(preview[4].split(" "));
     
@@ -89,6 +91,7 @@ export default function draftedCards(props) {
   
     )
   }
+  //checks for multiple clicks of the same card
   if(lastCard != props.currentCard)
     selectedCards.push(previewSetup((props.currentCard)))
     lastCard = props.currentCard

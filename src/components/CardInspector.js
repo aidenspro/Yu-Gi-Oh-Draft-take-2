@@ -11,17 +11,6 @@ export default function cardInspect(props){
   var [currentName, setCurrentName] = useState("loading...");
   var [currentDesc, setCurrentDesc] = useState("loading...");
 
-  const onHover = (event) => {
-   
-    setCurrentName(props.card[1])
-    setCurrentDesc(props.card[2])
-
-    setPosition({
-     x: event.clientX+20,
-     y: event.clientY+20
-    })
-  
-}
 
  //set the card preview to visible
 
@@ -35,7 +24,7 @@ useEffect(() => {
   }
 }, [position])
 
-  
+  //returns the floating div that floats following the cursor when highlighting a card with info
 return(
   <div ref={ref} className=" cardInspectorHidden" >
       <div className="inspectHeader">

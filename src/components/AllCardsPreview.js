@@ -8,7 +8,7 @@ console.log(props.cards[0])
 var divRef = useRef();
 var imgRef = useRef();
 
-
+//keeps track of all chosen cards, returns consistent list
   if(tempArray != 55144522 && tempArray>0)
     images.push( 
     

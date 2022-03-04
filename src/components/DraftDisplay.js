@@ -12,7 +12,6 @@ var numClicks = 0;
 var cardArray = [];
 var extraArray = [];
 extraArray[0] = '#extra'
-var sideDeck = [];
 cardArray[0] = "#Created By ...\n#main"
 var draftOver = false;
 
@@ -25,7 +24,10 @@ function draftDisplay() {
   var downloadRef = useRef();
   var randomRef = useRef();
   var [text,setText] = useState("Start Draft");
-  
+
+
+  //called by child -> MakeCardGivenInfo to push cards to the view of the DraftDisplay
+  // also handles when the draft starts and ends use the num variable, which measures the number of clicks that happen in the card view.
   const handleOnClick = (infoArray) => {
     if(!draftOver){
 
@@ -33,14 +35,14 @@ function draftDisplay() {
         infoArray[3].split(" ")[0] != 'Normal' ||  infoArray[3].split(" ")[0] != 'Flip' ||  infoArray[3].split(" ")[0] !='Tuner' ){
           extraArray.push(infoArray[0]);   
       }
-    
+    //if not the starting card
     if(infoArray.type != "click" && infoArray[0] != 55144522){
     setSelectedCard(infoArray);
     if(num >= 1){
     cardArray[num] = infoArray[0]}
     }
-    
     num++;
+    //if num = last card
     if(num == 33){
       draftOver = true;
       ref.current.className = "test"
@@ -52,7 +54,7 @@ function draftDisplay() {
     setNextCard(num);
   }
   };
-
+  //removes the cover banner after generating cards
   const handleOnClickBanner = () => {
     if(numClicks == 0){
     numClicks++

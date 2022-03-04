@@ -22,7 +22,7 @@ function getJson() {
   return card;
 }
 
-
+//assigns array based on jSon info
 function returnInfo(cardJSON){
   var cardInfo = [];
   
