@@ -312,7 +312,7 @@ visibility: hidden;
 }
 
 .draftedcards{
-  max-width: 100%;
+  
   min-height: 400px;
   text-align: center;
   display: grid; 
