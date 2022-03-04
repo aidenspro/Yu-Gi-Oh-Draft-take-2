@@ -260,7 +260,7 @@ visibility: hidden;
   position: fixed;
   margin-left: 85%;
   margin-bottom: 0%;
-  
+  z-index: 1;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr;
   width: 15%;

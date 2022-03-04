@@ -25,6 +25,7 @@ function draftDisplay() {
   var downloadRef = useRef();
   var randomRef = useRef();
   var [text,setText] = useState("Start Draft");
+  
   const handleOnClick = (infoArray) => {
     if(!draftOver){
 
