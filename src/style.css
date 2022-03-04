@@ -17,7 +17,7 @@ html {
 
 .placeholder-plain-smaller:hover{
   transition: transform .5s ease-in-out; /* Animation */
-  transform: scale(2.5) translateX(-20px) translatey(30px);
+  transform: scale(3.5) translateX(-23px) translatey(34px);
 }
 
 .divborder{
@@ -178,17 +178,7 @@ html {
   transition: visibility 2s linear, opacity 2s linear;
   grid-area: randomcards;
 }
-.test-over{
-  
-  background-color: rgb(186, 204, 204);
-  z-index: 20;
-  text-align: center;
-  background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  grid-area: randomcards;
-  
-}
+
 
 
 @keyframes fadeInOpacity {
