@@ -77,9 +77,7 @@ function draftDisplay() {
       handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={3} nextCard={nextCard} handleOnClick={handleOnClick}/>
       <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick}/>
-      <div className="allCards">
-      <AllCardsPreview cards={selectedCard}/>
-      </div>
+      
       </div>
       
       <div className="draftheaders">
@@ -100,7 +98,9 @@ function draftDisplay() {
       </h4>
       </div>
       
- 
+      <div className="allCards">
+      <AllCardsPreview cards={selectedCard}/>
+      </div>
    <DraftedCardsDisplay currentCard={selectedCard}/>
     
       
