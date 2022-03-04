@@ -286,10 +286,14 @@ visibility: hidden;
     ". . . . ."; 
   grid-area: randomcards; 
   border: 5px solid royalblue;
-  overflow-x: scroll;
+  
   visibility: visible;
   opacity: 1;
 	transition:visibility 0s 1.5s,opacity 1s linear;
+}
+
+.randomcards:hover{
+  overflow-x: scroll;
 }
 
 .draftheaders{
