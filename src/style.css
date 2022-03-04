@@ -17,7 +17,7 @@ html {
 
 .placeholder-plain-smaller:hover{
   transition: transform .5s ease-in-out; /* Animation */
-  transform: scale(3.5) translateX(-23px) translatey(34px);
+  transform: scale(3.5) translateX(-25px) translatey(40px);
 }
 
 .divborder{
@@ -241,13 +241,14 @@ visibility: hidden;
 /* #-------------Grid Stuff---------------------- */
 .allCards { 
   position: fixed;
-  margin-left: 85%;
+  margin-left: 80%;
   margin-bottom: 0%;
   z-index: 1;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr;
-  width: 15%;
-  right: 0%;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 19%;
+  margin-right: 1%;
   top: 0px;
 
 }
