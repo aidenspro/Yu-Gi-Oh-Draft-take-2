@@ -14,7 +14,7 @@ var imgRef = useRef();
     
     <img 
     ref={imgRef}
-    className={"placeholder-plain-smaller" } 
+    className={"placeholder-plain-smaller" + " " + 'zoom'} 
     src={
       'https://storage.googleapis.com/ygoprodeck.com/pics/' +
       props.cards[0] +

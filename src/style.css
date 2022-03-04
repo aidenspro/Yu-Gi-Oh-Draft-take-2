@@ -15,10 +15,9 @@ html {
 
 }
 
-.zoom {
-  transition: transform .2s ease-in-out; /* Animation */
-  transform: scale(1.5) translateX(-200px) translatey(50px);
-  
+.placeholder-plain-smaller:hover{
+  transition: transform .5s ease-in-out; /* Animation */
+  transform: scale(2.5) translateX(-20px) translatey(30px);
 }
 
 .divborder{
@@ -76,45 +75,39 @@ html {
   width: 100%;
   Height: fit-content;
   background-color: rgb(202, 202, 211); 
-  border-radius: 7px 7px 7px  7px;;
 }
 
 .monster-preview{
   float: left;
   position: relative;
   text-align: center;
-  border-top: 4px solid;
-  border-bottom: 1px solid;
+  border: 2px solid white;
   background-color: rgb(167, 101, 101); 
-  border-radius: 7px 7px 7px  7px;
   width: 100%;
 }
 .spell-preview{
   position: relative;
   text-align: center;
-  border-top: 4px solid;
-  border-bottom: 1px solid;
+  border: 2px solid white;
   background-color: rgb(30, 152, 168); 
-  border-radius: 7px 7px 7px  7px;
+ 
   width: 100%;
 }
 .trap-preview{
   position: relative;
   text-align: center;
-  border-top: 4px solid;
-  border-bottom: 1px solid;
+  border: 2px solid white;
   background-color: rgb(143, 22, 123); 
-  border-radius: 7px 7px 7px  7px;
+ 
   width: 100%;
 }
 
 .extra-preview{
   position: relative;
   text-align: center;
-  border-top: 4px solid;
-  border-bottom: 1px solid;
+  border: 2px solid white;
   background-color: rgb(83, 83, 100); 
-  border-radius: 7px 7px 7px  7px;
+ 
   width: 100%;
 }
 
@@ -274,8 +267,7 @@ visibility: hidden;
   margin-bottom: 3%;
   margin-left: 3%;
   margin-right: 15%;
-  display: block;
-  overflow: auto;
+  
 }
 
 
