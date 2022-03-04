@@ -22,7 +22,7 @@ html {
 }
 
 .zoom:hover {
-  transform: scale(5) translateX(-100px);
+  transform: scale(1.5) translateX(-100px);
  
 }
 
