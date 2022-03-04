@@ -15,6 +15,7 @@ extraArray[0] = '#extra'
 var sideDeck = [];
 cardArray[0] = "#Created By ...\n#main"
 var draftOver = false;
+
 function draftDisplay() {
   
   var [nextCard,setNextCard] = useState(0);
@@ -23,7 +24,7 @@ function draftDisplay() {
   var ref = useRef();
   var downloadRef = useRef();
   var randomRef = useRef();
-
+  var [text,setText] = useState("Start Draft");
   const handleOnClick = (infoArray) => {
     if(!draftOver){
 
@@ -44,6 +45,7 @@ function draftDisplay() {
       ref.current.className = "test"
       extraArray.push("!side");
       downloadRef.current.style = "visibility: visible"
+      setText("Draft Over")
     }
     
     setNextCard(num);
@@ -54,21 +56,23 @@ function draftDisplay() {
     if(numClicks == 0){
     numClicks++
     randomRef.current.className = "randomcards"
-    ref.current.className = "test-hidden"
+    ref.current.className = "test-hidden" + " " + "draftfont"
     num++
     setNextCard(num);
+    
     }
   }
 
   return (
-
+    <div >
     <div className="container" >
-      <div className="test" ref={ref} onClick={() => handleOnClickBanner()}> <h1> Click Here to Start Draft </h1> 
+      <div className={"test" + " " + "draftfont"} ref={ref} onClick={() => handleOnClickBanner()}> <h1> {text} </h1> 
       <div className={'footer'} ref={downloadRef}>
         Download Deck
-        - 
+        - &nbsp;
     <CreateDeckList deckList={cardArray.concat(extraArray)}/>
-      </div></div> 
+      </div>
+      </div> 
       <div className="randomcards-hidden" ref={randomRef} >
       
       <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
@@ -98,15 +102,14 @@ function draftDisplay() {
       </h4>
       </div>
       
-      <div className="allCards">
-      <AllCardsPreview cards={selectedCard}/>
-      </div>
+      
    <DraftedCardsDisplay currentCard={selectedCard}/>
     
-      
-
   </div>
-    
+  <div className="allCards">
+  <AllCardsPreview cards={selectedCard}/>
+  </div>
+  </div>
   );
 }
 

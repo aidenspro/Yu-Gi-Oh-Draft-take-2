@@ -9,7 +9,7 @@ export default function SaveList (props)  {
 
   return (
     <>
-      <a download='list.ydk' href={downloadLink}>Download</a>
+      <a className={'fakebutton'} download='list.ydk' href={downloadLink}> Download</a>
     </>
   );
 }
