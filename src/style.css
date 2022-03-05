@@ -322,7 +322,7 @@ visibility: hidden;
     "draftheaders"
     ". . . ."; 
   grid-area: draftedcards; 
-  
+  width: 100%;
   
 }
 /* #-------------Grid Stuff---------------------- */
