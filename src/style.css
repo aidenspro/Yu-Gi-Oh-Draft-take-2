@@ -278,7 +278,7 @@ visibility: hidden;
 
 .draftheaders{
   z-index: -1;
-  top: 31%;
+  top: 290px;
   width: 80%;
   position: absolute;
   text-align: center;
@@ -292,7 +292,7 @@ visibility: hidden;
 
   width: 80%;
   position: absolute;
-  top:40%;
+  top:385px;
   min-height: 400px;
   text-align: center;
   display: grid; 
