@@ -9,6 +9,7 @@ html {
 .placeholder-plain-smaller:hover{
   transition: transform .5s ease-in-out; /* Animation */
   transform: scale(3.5) translateX(-25px) translatey(40px);
+  z-index: 50;
 }
 
 .placeholder-plain {
@@ -290,7 +291,7 @@ visibility: hidden;
 }
 
 .draftedcards{
-  z-index: -1;
+  z-index: 1;
   width: 80%;
   position: absolute;
   top:38%;
