@@ -50,7 +50,7 @@ html {
 }
 
 .preview{
-  float: left;
+
   position: absolute;
   text-align: center;
   border-top: 4px solid;
@@ -61,7 +61,7 @@ html {
 }
 
 .monster-preview{
-  float: left;
+
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -130,7 +130,7 @@ html {
 }
 .test{
   width: 80%;
-  height: 256px;
+  height: 258px;
   position: absolute;
   border: 5px solid black;
   background-color: rgb(186, 204, 204);
@@ -143,7 +143,7 @@ html {
 }
 .test-hidden{
   width: 80%;
-  height: 256px;
+  height: 258px;
   position: absolute;
   border: 5px solid black;
   background-color: rgb(186, 204, 204);
@@ -295,7 +295,7 @@ visibility: hidden;
   grid-template-columns: 1fr 1fr 1fr 1fr; 
   grid-template-rows: 0.2fr 1.8fr; 
   gap: 0px 0px; 
-  min-width: 100%;
+  max-width: 80%;
   
 }
 /* #-------------Grid Stuff---------------------- */
