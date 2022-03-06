@@ -37,10 +37,24 @@ export default function draftedCards(props) {
     setCurrentDesc(props.currentCard[2])
     setCurrentType(props.currentCard[3])
     setCurrentAttribute(props.currentCard[10])
-    setPosition({
-     x: event.clientX+20,
-     y: event.clientY+20
-    })
+    if(event.clientX - (window.innerWidth * .10) < 0){
+      setPosition({
+        x: event.clientX - event.clientX,
+        y: event.clientY+20
+       })
+      }else if((event.clientX + (window.innerWidth * .10)) > window.innerWidth * .8){
+      console.log('here')
+      setPosition({
+      x: window.innerWidth * .8 - (window.innerWidth * .20),
+      y: event.clientY+20
+      })
+    }
+    else{
+       setPosition({
+        x: event.clientX - window.innerWidth * .1,
+        y: event.clientY+20
+       })
+      }
   
 }
 
