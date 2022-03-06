@@ -33,14 +33,21 @@ export default function makeCard(props) {//---------------------- export functio
     setCurrentType(futureCards[props.nextCard][3])
     setCurrentRace(futureCards[props.nextCard][4] +"/" + currentType.split(" ")[0])
     setCurrentAttribute(futureCards[props.nextCard][10])
-
-    if(event.clientX-220 > 0){
-    setPosition({
-     x: event.clientX-220,
-     y: event.clientY+20
-    })}else{
+    if(event.clientX - (window.innerWidth * .10) < 0){
       setPosition({
         x: event.clientX - event.clientX,
+        y: event.clientY+20
+       })
+      }else if((event.clientX + (window.innerWidth * .10)) > window.innerWidth * .8){
+      console.log('here')
+      setPosition({
+      x: window.innerWidth * .8 - (window.innerWidth * .20),
+      y: event.clientY+20
+      })
+    }
+    else{
+       setPosition({
+        x: event.clientX - window.innerWidth * .1,
         y: event.clientY+20
        })
       }
