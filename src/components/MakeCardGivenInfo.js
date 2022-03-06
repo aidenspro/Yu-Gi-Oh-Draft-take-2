@@ -33,10 +33,17 @@ export default function makeCard(props) {//---------------------- export functio
     setCurrentType(futureCards[props.nextCard][3])
     setCurrentRace(futureCards[props.nextCard][4] +"/" + currentType.split(" ")[0])
     setCurrentAttribute(futureCards[props.nextCard][10])
+
+    if(event.clientX-220 > 0){
     setPosition({
-     x: event.clientX+20,
+     x: event.clientX-220,
      y: event.clientY+20
-    })
+    })}else{
+      setPosition({
+        x: event.clientX - event.clientX,
+        y: event.clientY+20
+       })
+      }
   
 }
 
