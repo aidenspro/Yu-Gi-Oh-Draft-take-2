@@ -48,6 +48,7 @@ function draftDisplay() {
       ref.current.className = "test"
       extraArray.push("!side");
       downloadRef.current.style = "visibility: visible"
+      randomRef.current.className = "randomcards-hidden"
       setText("Draft Over")
     }
     
