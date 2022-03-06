@@ -106,10 +106,11 @@ function draftDisplay() {
 
       <DraftedCardsDisplay currentCard={selectedCard}/>
     
-
+      <div className="sidebar" />
     <div className="allCards">
     <AllCardsPreview cards={selectedCard}/>
     </div>
+   
   </div>
   );
 }
