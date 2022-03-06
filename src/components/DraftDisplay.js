@@ -43,7 +43,7 @@ function draftDisplay() {
     }
     num++;
     //if num = last card
-    if(num == 33){
+    if(num == 31){
       draftOver = true;
       ref.current.className = "test"
       extraArray.push("!side");

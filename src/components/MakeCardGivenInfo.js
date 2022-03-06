@@ -11,7 +11,7 @@ export default function makeCard(props) {//---------------------- export functio
   var futureCards = [];
   //loading all future cards at the start of the draft
   futureCards[0] = [55144522,"Click Here","To Start Draft","test"]
-  for(var i = 1;i<34;i++){
+  for(var i = 1;i<32;i++){
     futureCards[i] = GetRandomCardInfo();
   }
   const imageRef = useRef();
