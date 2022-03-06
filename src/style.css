@@ -51,7 +51,7 @@ html {
 }
 
 .preview{
-
+  z-index: -1;
   position: absolute;
   text-align: center;
   border-top: 4px solid;
@@ -62,7 +62,7 @@ html {
 }
 
 .monster-preview{
-
+  z-index: -1;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -70,6 +70,7 @@ html {
   width: 100%;
 }
 .spell-preview{
+  z-index: -1;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -78,6 +79,7 @@ html {
   width: 100%;
 }
 .trap-preview{
+  z-index: -1;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -87,6 +89,7 @@ html {
 }
 
 .extra-preview{
+  z-index: -1;
   position: relative;
   text-align: center;
   border: 2px solid white;
