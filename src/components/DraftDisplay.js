@@ -83,8 +83,8 @@ function draftDisplay() {
     loadingRef.current.style = 'opacity: 1';
     }else{
     randomRef.current.className = 'randomcards-hidden';
-    loadingRef.current.style = 'visibility: hidden';
-    loadingRef.current.style = 'opacity: 0';
+    loadingRef.current.style = 'visibility: visible';
+    loadingRef.current.style = 'opacity: 1';
     }
   };
 
