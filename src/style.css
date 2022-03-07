@@ -54,7 +54,7 @@ html {
   height: 250px;
   width: 200px;
   z-index: 3;
-  cursor: zoom-in;
+  cursor: pointer;
   border: 3px solid #f8ff6c;
 }
 
@@ -87,7 +87,7 @@ html {
   position: relative;
   text-align: center;
   border: 2px solid white;
-  background-color: rgb(143, 22, 123); 
+  background-color: rgb(179, 26, 153); 
  
   width: 100%;
 }
@@ -97,7 +97,7 @@ html {
   position: relative;
   text-align: center;
   border: 2px solid white;
-  background-color: rgb(83, 83, 100); 
+  background-color: rgb(92, 92, 100); 
   width: 100%;
 }
 
@@ -299,7 +299,7 @@ visibility: hidden;
 }
 
 .draftedcards{
-
+  font-size: 24px;
   width: 80%;
   position: absolute;
   top:385px;
