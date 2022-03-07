@@ -73,6 +73,7 @@ html {
 }
 
 .preview{
+  font-size: 22px;
   position: absolute;
   text-align: center;
   border-top: 4px solid;
@@ -83,6 +84,7 @@ html {
 }
 
 .monster-preview{
+  font-size: 22px;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -90,6 +92,7 @@ html {
   width: 100%;
 }
 .spell-preview{
+  font-size: 22px;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -98,6 +101,7 @@ html {
   width: 100%;
 }
 .trap-preview{
+  font-size: 22px;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -107,7 +111,7 @@ html {
 }
 
 .extra-preview{
-
+  font-size: 22px;
   position: relative;
   text-align: center;
   border: 2px solid white;
@@ -117,6 +121,7 @@ html {
 
 
 .cardInspector{
+  font-size: 20px;
   position: fixed;
   left: 0px;
   top: 0px;
@@ -153,6 +158,7 @@ html {
   border-radius: 0px 0px 7px  7px;
 }
 .test{
+  
   width: 80%;
   height: 258px;
   position: absolute;
@@ -161,8 +167,20 @@ html {
   z-index: 0;
   text-align: center;
   background-image: url('https://stackblitz.com/files/react-26cvwe/github/aidenspro/Yu-Gi-Oh-Draft-take-2/master/src/components/cardbackground.jpg');
+  background-position: center; 
+}
+
+.loading{
+  
+  width: 80%;
+  height: 258px;
+  position: absolute;
+  border: 5px solid black;
+  background-color: rgb(186, 204, 204);
+  z-index: 0;
+  text-align: center;
   background-position: center;
-  background-repeat: no-repeat;
+  
   
 }
 .test-hidden{
@@ -303,6 +321,7 @@ visibility: hidden;
 }
 
 .draftheaders{
+  
   z-index: -1;
   top: 290px;
   width: 80%;
@@ -315,7 +334,7 @@ visibility: hidden;
 }
 
 .draftedcards{
-  font-size: 24px;
+  
   width: 80%;
   position: absolute;
   top:385px;
