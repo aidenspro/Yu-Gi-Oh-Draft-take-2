@@ -76,11 +76,16 @@ function draftDisplay() {
     if (numLoaded == 5 && num != 31) {
       randomRef.current.className = 'randomcards';
       loadingRef.current.style = 'visibility: hidden';
+      loadingRef.current.style = 'opacity: 0';
       numLoaded = 0;
-    }else if(numLoaded == 1)
+    }else if(numLoaded == 1){
     loadingRef.current.style = 'visibility: visible';
-    else
+    loadingRef.current.style = 'opacity: 1';
+    }else{
     randomRef.current.className = 'randomcards-hidden';
+    loadingRef.current.style = 'visibility: hidden';
+    loadingRef.current.style = 'opacity: 0';
+    }
   };
 
   return (

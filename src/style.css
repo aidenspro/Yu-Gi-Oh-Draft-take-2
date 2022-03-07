@@ -181,7 +181,8 @@ html {
   text-align: center;
   background-position: center;
   visibility: hidden;
-  transition: visibility 1s 2s linear;
+  opacity: 0;
+  transition: visibility 1s linear opacity 1s linear;
 }
 
 .test-hidden{
