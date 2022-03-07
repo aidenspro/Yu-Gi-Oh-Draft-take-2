@@ -164,7 +164,7 @@ html {
   background-repeat: no-repeat;
   visibility: hidden;
   opacity: 0;
-  transition: width 2s linear, visibility 2s linear, opacity 2s linear;
+  transition: width 2s linear;
   grid-area: randomcards;
 }
 
@@ -231,7 +231,7 @@ visibility: hidden;
   position: absolute;
   margin-left: 81%;
   margin-top: 5px;
-
+  cursor: zoom-in;
   z-index: 5;
   display: grid; 
   grid-template-columns: 1fr 
@@ -249,8 +249,8 @@ visibility: hidden;
 
 .randomcards-hidden{
   z-index: 2;
-  width: 80%;
-  height: 0%;
+  width: 0%;
+
   position: absolute;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
@@ -281,7 +281,7 @@ visibility: hidden;
   overflow-x: hidden;
   visibility: visible;
   opacity: 1;
-	transition: height 2s linear, visibility 2s linear, opacity 2s linear;
+	transition: width 1s linear, visibility 2s linear, opacity 2s linear;
 }
 
 .randomcards:hover{
