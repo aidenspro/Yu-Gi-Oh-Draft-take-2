@@ -250,6 +250,7 @@ visibility: hidden;
 .randomcards-hidden{
   z-index: 2;
   width: 80%;
+  height: 0%;
   position: absolute;
   display: grid; 
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
@@ -260,6 +261,7 @@ visibility: hidden;
   grid-area: randomcards; 
   visibility: hidden;
   opacity: 0;
+  transition: height 2s linear, visibility 2s linear, opacity 2s linear;
   
 }
 .randomcards{
@@ -279,7 +281,7 @@ visibility: hidden;
   overflow-x: hidden;
   visibility: visible;
   opacity: 1;
-	transition:visibility 0s 1.5s,opacity 1s linear;
+	transition: height 2s linear, visibility 2s linear, opacity 2s linear;
 }
 
 .randomcards:hover{

@@ -14,6 +14,7 @@ var extraArray = [];
 extraArray[0] = '#extra'
 cardArray[0] = "#Created By ...\n#main"
 var draftOver = false;
+var numLoaded = 0;
 
 function draftDisplay() {
   
@@ -67,6 +68,17 @@ function draftDisplay() {
     }
   }
 
+  const handleOnLoad = () => {
+    if(numClicks != 0){
+      numLoaded++;
+    }
+    if(numLoaded == 5){
+      randomRef.current.className = "randomcards"
+      numLoaded= 0;
+    }else
+      randomRef.current.className = "randomcards-hidden"
+  }
+
   return (
     <div className="topdiv">
       <div className={"test" + " " + "draftfont"} ref={ref} onClick={() => handleOnClickBanner()}> <h1> {text} </h1> 
@@ -78,12 +90,11 @@ function draftDisplay() {
       </div> 
 
       <div className="randomcards-hidden" ref={randomRef} >
-      <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick}/>
-      <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick}/>
-      <MakeCardGivenInfo key={2} nextCard={nextCard}
-      handleOnClick={handleOnClick}/>
-      <MakeCardGivenInfo key={3} nextCard={nextCard} handleOnClick={handleOnClick}/>
-      <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick}/>
+      <MakeCardGivenInfo key={0} nextCard={nextCard} handleOnClick={handleOnClick} handleOnLoad={handleOnLoad}/>
+      <MakeCardGivenInfo key={1} nextCard={nextCard} handleOnClick={handleOnClick} handleOnLoad={handleOnLoad}/>
+      <MakeCardGivenInfo key={2} nextCard={nextCard} handleOnClick={handleOnClick} handleOnLoad={handleOnLoad}/>
+      <MakeCardGivenInfo key={3} nextCard={nextCard} handleOnClick={handleOnClick} handleOnLoad={handleOnLoad}/>
+      <MakeCardGivenInfo key={4} nextCard={nextCard} handleOnClick={handleOnClick} handleOnLoad={handleOnLoad}/>
       </div>
       
       <div className="draftheaders">

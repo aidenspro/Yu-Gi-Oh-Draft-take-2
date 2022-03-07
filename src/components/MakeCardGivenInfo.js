@@ -83,7 +83,7 @@ const handleOnClick = (caller) => {
 //-----------------------------------return
   return (
   <div>
-  <img ref={imageRef} className={"placeholder-plain"} id={cardNumber} onMouseMove={onHover}  onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={() => handleOnClick()}
+  <img ref={imageRef} className={"placeholder-plain"} id={cardNumber} onMouseMove={onHover}  onMouseEnter={hoverEnter} onMouseOut={hoverExit} onClick={() => handleOnClick()} onLoad={() => props.handleOnLoad()}
   src={
     'https://storage.googleapis.com/ygoprodeck.com/pics/' +
     futureCards[props.nextCard][0] +
