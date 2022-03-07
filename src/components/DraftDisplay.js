@@ -24,7 +24,7 @@ function draftDisplay() {
   var downloadRef = useRef();
   var randomRef = useRef();
   var [text, setText] = useState('Start Draft');
-
+  var loadingRef = useRef();
   //called by child -> MakeCardGivenInfo to push cards to the view of the DraftDisplay
   // also handles when the draft starts and ends use the num variable, which measures the number of clicks that happen in the card view.
   const handleOnClick = (infoArray) => {
@@ -73,12 +73,14 @@ function draftDisplay() {
     if (numClicks != 0) {
       numLoaded++;
     }
-    if (numLoaded == 5) {
-      if (num != 31) {
+    if (numLoaded == 5 && num != 31) {
       randomRef.current.className = 'randomcards';
-    }
+      loadingRef.current.style = 'visibility: hidden';
       numLoaded = 0;
-    } else randomRef.current.className = 'randomcards-hidden';
+    }else if(numLoaded == 1)
+    loadingRef.current.style = 'visibility: visible';
+    else
+    randomRef.current.className = 'randomcards-hidden';
   };
 
   return (
@@ -94,6 +96,13 @@ function draftDisplay() {
           Download Deck - &nbsp;
           <CreateDeckList deckList={cardArray.concat(extraArray)} />
         </div>
+      </div>
+
+      <div
+        className={'loading' + ' ' + 'draftfont'}
+        ref={loadingRef}
+        onClick={() => handleOnClickBanner()}>
+          {"loading Cards..."}
       </div>
 
       <div className="randomcards-hidden" ref={randomRef}>
