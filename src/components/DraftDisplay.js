@@ -60,7 +60,7 @@ function draftDisplay() {
   const handleOnClickBanner = () => {
     if(numClicks == 0){
     numClicks++
-    randomRef.current.className = "randomcards"
+    
     ref.current.className = "test-hidden" + " " + "draftfont"
     num++
     setNextCard(num);
