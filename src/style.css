@@ -14,9 +14,14 @@ html {
   width: 16%;
 }
 
-.placeholder-plain-smaller:hover{
+.placeholder-plain-smaller-tophalf:hover{
   transition: transform .5s ease-in-out; /* Animation */
-  transform: scale(3.5) translateX(-25px) translatey(40px);
+  transform: scale(3.5) translateX(-30px) translatey(35px);
+  z-index: 5;
+}
+.placeholder-plain-smaller-bottomhalf:hover{
+  transition: transform .5s ease-in-out; /* Animation */
+  transform: scale(3.5) translateX(-30px) translatey(-35px);
   z-index: 5;
 }
 
@@ -39,7 +44,16 @@ html {
 
 }
 
-.placeholder-plain-smaller{
+.placeholder-plain-smaller-tophalf{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url('https://stackblitz.com/files/react-irx9rm/github/aidenspro/react-irx9rm/master/src/Components/images/cardBack.jpg');
+
+}
+.placeholder-plain-smaller-bottomhalf{
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
