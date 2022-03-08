@@ -16,7 +16,7 @@ html {
 
 .placeholder-plain-smaller-tophalf:hover{
   transition: transform .5s ease-in-out; /* Animation */
-  transform: scale(3.5) translateX(-30px) translatey(35px);
+  transform: scale(3.5) translateX(-30px) translatey(45px);
   z-index: 5;
 }
 .placeholder-plain-smaller-bottomhalf:hover{
