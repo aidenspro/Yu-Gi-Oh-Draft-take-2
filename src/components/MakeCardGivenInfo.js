@@ -1,6 +1,6 @@
 import React from 'react';
 import React, { useState, useEffect, useRef, createRef } from 'react';
-import GetRandomCardInfo from '../components/GetRandomCardInfo';
+import GetRandomCardInfo from '../components/GetRandomCardInfoFromFile';
 import CardInspector from '../components/CardInspector';
 
 
