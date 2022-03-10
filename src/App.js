@@ -3,7 +3,7 @@ import MakeCardGivenInfo from './components/MakeCardGivenInfo';
 import GetRandomCardInfo from './components/GetRandomCardInfo';
 import CardInspector from './components/CardInspector';
 import DraftDisplay from './components/DraftDisplay';
-import CardLibrary from './components/CardLibrary';
+import { CardLibrary } from './components/CardLibrary';
 import './style.css';
 
 export default function App() {
